@@ -1,0 +1,245 @@
+/* YOUR CUSTOM STYLES */
+.page {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  transition: all .6s cubic-bezier(.5, .2, .2, 1.1);
+  -webkit-transition: all .6s cubic-bezier(.5, .2, .2, 1.1);
+  -moz-transition: all .6s cubic-bezier(.5, .2, .2, 1.1);
+  -o-transition: all .6s cubic-bezier(.5, .2, .2, 1.1);  
+  overflow: hidden; 
+}
+
+.page {
+  position: absolute;
+}
+
+#top-page {
+    background: url("../images/mountains-1.jpg")no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    display: block;
+}
+
+.x.axis path {
+  display: none;
+}
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
+circle {
+  fill: white;
+}
+
+.axis path, .axis line{
+  fill:none;
+  stroke:black;
+  shape-rendering: crispEdges;
+}
+
+.axis text {
+  fill:black;
+    font-size: 14px;
+    font-family: sans-serif;
+  
+}
+rect {
+  opacity : 0.95;
+  /*fill : #83d8ff;*/
+}
+
+g path {
+  /*stroke: #00a0e9;*/
+  stroke-opacity : 1;
+  stroke-width: 1;
+  fill: red;
+}
+
+path.linechart {
+  stroke-width : 2;
+  stroke: rgba(255, 138, 128, 1);
+}
+
+circle {
+  fill: white;
+  stroke: rgba(255, 138, 128, 1);
+  stroke-width : 2;
+  opacity : 0.95;
+}
+
+.tick line {
+  opacity: 0.2;
+}
+
+
+.y1.axis line,
+.y1.axis path
+{
+  stroke : #83d8ff;
+}
+
+.y2.axis line,
+.y2.axis path
+{
+  stroke: #00a0e9;
+  opacity: 0.3;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+  fill:none;
+  stroke:black;
+}
+
+.x.axis path {
+  display: none;
+}
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
+.axis text {
+  fill: #444;
+  /*fill: rgba(64, 255, 12, 1);*/
+}
+
+.bar:hover {
+  fill: orangered ;
+}
+
+.circle:hover{
+  fill: yellow;
+  stroke: orangered;
+  stroke-width: 4;
+}
+
+.d3-tip {
+  line-height: 1;
+  font-weight: bold;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  border-radius: 2px;
+  font-size: 11px;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 12px;
+  width: 100%;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.8);
+  content: "\25BC";
+  position: absolute;
+  text-align: center;
+}
+
+/* Style northward tooltips differently */
+.d3-tip.n:after {
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0;
+}
+
+.off{
+  text-decoration: line-through;
+}
+
+/*.legend-frame{
+  stroke: black;
+  fill: white;
+}*/
+
+.legend-pointer{
+  cursor: pointer;
+}
+
+.legend-text {
+  /*fill: rgba(64, 255, 12, 1);*/
+  font-size: 14px;
+}
+
+.d3-tip {
+  line-height: 1;
+  font-weight: bold;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 2px;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 10px;
+  width: 100%;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.8);
+  content: "\25BC";
+  position: absolute;
+  text-align: center;
+}
+
+/* Style northward tooltips differently */
+.d3-tip.n:after {
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0;
+}
+
+
+
+
+/*.full-bg-img {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0; }
+
+
+  .flex-center {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 100%; }
+  .flex-center p {
+    margin: 0; }
+  .flex-center ul {
+    text-align: center; }
+    .flex-center ul li {
+      margin-bottom: 1rem; }*/

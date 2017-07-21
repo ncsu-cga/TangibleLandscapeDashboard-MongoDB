@@ -1,0 +1,141 @@
+[
+    {
+        "axis": "Number of Dead Oaks",
+        "options": false,
+        "values": [
+            {"value": 56784, "playerName": "Baseline", "attempt": ""},
+            {"value": 52725, "playerName": "James", "attempt": "1"},
+            {"value": 58037, "playerName": "David", "attempt": "1"}, 
+            {"value": 33571, "playerName": "David", "attempt": "2"}, 
+            {"value": 46111, "playerName": "David", "attempt": "3"}, 
+            {"value": 54688, "playerName": "John", "attempt": "1"}, 
+            {"value": 53257, "playerName": "John", "attempt": "2"}, 
+            {"value": 47640, "playerName": "John", "attempt": "3"}, 
+            {"value": 54710, "playerName": "Donna", "attempt": "1"}, 
+            {"value": 56317, "playerName": "Donna", "attempt": "2"}, 
+            {"value": 54093, "playerName": "Donna", "attempt": "3"}, 
+            {"value": 57106, "playerName": "Margaret", "attempt": "1"}, 
+            {"value": 57106, "playerName": "Margaret", "attempt": "2"}, 
+            {"value": 39912, "playerName": "Michael", "attempt": "1"}, 
+            {"value": 51515, "playerName": "Kimberly", "attempt": "1"}, 
+            {"value": 47026, "playerName": "Kimberly", "attempt": "2"}, 
+            {"value": 45634, "playerName": "Kimberly", "attempt": "3"}
+        ]
+    },
+    {
+        "axis": "Percentage of Dead Oaks",
+        "options": false,
+        "values":[
+            {"value": 5.898, "playerName": "Baseline", "attempt": ""},
+            {"value": 5.477, "playerName": "James", "attempt": "1"},
+            {"value": 6.028, "playerName": "David", "attempt": "1"}, 
+            {"value": 3.487, "playerName": "David", "attempt": "2"}, 
+            {"value": 4.79, "playerName": "David", "attempt": "3"}, 
+            {"value": 5.68, "playerName": "John", "attempt": "1"}, 
+            {"value": 5.532, "playerName": "John", "attempt": "2"}, 
+            {"value": 4.948, "playerName": "John", "attempt": "3"}, 
+            {"value": 5.683, "playerName": "Donna", "attempt": "1"}, 
+            {"value": 5.85, "playerName": "Donna", "attempt": "2"}, 
+            {"value": 5.691, "playerName": "Donna", "attempt": "3"}, 
+            {"value": 5.932, "playerName": "Margaret", "attempt": "1"}, 
+            {"value": 5.932, "playerName": "Margaret", "attempt": "2"}, 
+            {"value": 4.146, "playerName": "Michael", "attempt": "1"}, 
+            {"value": 5.351, "playerName": "Kimberly", "attempt": "1"}, 
+            {"value": 4.885, "playerName": "Kimberly", "attempt": "2"}, 
+            {"value": 4.74, "playerName": "Kimberly", "attempt": "3"}
+        ]
+    },
+    {
+        "axis": "Infected Area (ha)",
+        "options": false,
+        "values": [
+            {"value": 3417, "playerName": "Baseline", "attempt": ""},
+            {"value": 3294, "playerName": "James", "attempt": "1"},
+            {"value": 3407, "playerName": "David", "attempt": "1"}, 
+            {"value": 2555, "playerName": "David", "attempt": "2"}, 
+            {"value": 2762, "playerName": "David", "attempt": "3"}, 
+            {"value": 3485, "playerName": "John", "attempt": "1"}, 
+            {"value": 3480, "playerName": "John", "attempt": "2"}, 
+            {"value": 3028, "playerName": "John", "attempt": "3"}, 
+            {"value": 3203, "playerName": "Donna", "attempt": "1"}, 
+            {"value": 3426, "playerName": "Donna", "attempt": "2"}, 
+            {"value": 3252, "playerName": "Donna", "attempt": "3"}, 
+            {"value": 3345, "playerName": "Margaret", "attempt": "1"}, 
+            {"value": 3345, "playerName": "Margaret", "attempt": "2"}, 
+            {"value": 2742, "playerName": "Michael", "attempt": "1"}, 
+            {"value": 3258, "playerName": "Kimberly", "attempt": "1"}, 
+            {"value": 3072, "playerName": "Kimberly", "attempt": "2"}, 
+            {"value": 2980, "playerName": "Kimberly", "attempt": "3"}                
+        ]
+    },
+    {
+        "axis": "Money Spent",
+        "options": {"money": true},
+        "values": [
+            {"value": 0, "playerName": "Baseline", "attempt": ""},
+            {"value": 382036, "playerName": "James", "attempt": "1"},
+            {"value": 796705, "playerName": "David", "attempt": "1"}, 
+            {"value": 1841047, "playerName": "David", "attempt": "2"}, 
+            {"value": 1176461, "playerName": "David", "attempt": "3"}, 
+            {"value": 379015, "playerName": "John", "attempt": "1"}, 
+            {"value": 604700, "playerName": "John", "attempt": "2"}, 
+            {"value": 5879199, "playerName": "John", "attempt": "3"}, 
+            {"value": 624835, "playerName": "Donna", "attempt": "1"}, 
+            {"value": 609931, "playerName": "Donna", "attempt": "2"}, 
+            {"value": 467095, "playerName": "Donna", "attempt": "3"}, 
+            {"value": 554250, "playerName": "Margaret", "attempt": "1"}, 
+            {"value": 554250, "playerName": "Margaret", "attempt": "2"}, 
+            {"value": 694901, "playerName": "Michael", "attempt": "1"}, 
+            {"value": 568524, "playerName": "Kimberly", "attempt": "1"}, 
+            {"value": 577753, "playerName": "Kimberly", "attempt": "2"}, 
+            {"value": 824715, "playerName": "Kimberly", "attempt": "3"}
+        ]
+    },
+    {
+        "axis": "Area Treated (ha)",
+        "options": false,
+        "values": [
+            {"value": 0, "playerName": "Baseline", "attempt": ""},
+            {"value": 35, "playerName": "James", "attempt": "1"},
+            {"value": 59, "playerName": "David", "attempt": "1"}, 
+            {"value": 104, "playerName": "David", "attempt": "2"}, 
+            {"value": 61, "playerName": "David",  "attempt": "3"}, 
+            {"value": 62, "playerName": "John", "attempt": "1"}, 
+            {"value": 59, "playerName": "John", "attempt": "2"}, 
+            {"value": 463, "playerName": "John", "attempt": "3"}, 
+            {"value": 55, "playerName": "Donna", "attempt": "1"}, 
+            {"value": 52, "playerName": "Donna", "attempt": "2"}, 
+            {"value": 58, "playerName": "Donna", "attempt": "3"}, 
+            {"value": 62, "playerName": "Margaret", "attempt": "1"}, 
+            {"value": 62, "playerName": "Margaret", "attempt": "2"}, 
+            {"value": 62, "playerName": "Michael", "attempt": "1"}, 
+            {"value": 61, "playerName": "Kimberly", "attempt": "1"}, 
+            {"value": 60, "playerName": "Kimberly", "attempt": "2"}, 
+            {"value": 62, "playerName": "Kimberly", "attempt": "3"}               
+        ]
+    },
+    {
+        "axis": "Price per Oak",
+        "options": {"negative": true},
+        "values": [
+            {"value": 0, "playerName": "Baseline", "attempt": ""},
+            {"value": 94.12071939, "playerName": "James", "attempt": "1"},
+            {"value": -635.8379888, "playerName": "David", "attempt": "1"}, 
+            {"value": 94.12071939, "playerName": "David", "attempt": "2"}, 
+            {"value": -635.8379888, "playerName": "David", "attempt": "3"}, 
+            {"value": 79.31103261, "playerName": "John", "attempt": "1"}, 
+            {"value": 110.227771, "playerName": "John", "attempt": "2"}, 
+            {"value": 180.8277672, "playerName": "John", "attempt": "3"}, 
+            {"value": 171.4488234, "playerName": "Donna", "attempt": "1"}, 
+            {"value": 642.957021, "playerName": "Donna", "attempt": "2"}, 
+            {"value": 301.2704918, "playerName": "Donna", "attempt": "3"}, 
+            {"value": 1306.062099, "playerName": "Margaret", "attempt": "1"}, 
+            {"value": 173.5767373, "playerName": "Margaret", "attempt": "2"}, 
+            {"value": -1721.273292, "playerName": "Michael", "attempt": "1"}, 
+            {"value": -1721.273292, "playerName": "Kimberly", "attempt": "1"}, 
+            {"value": 41.18664059, "playerName": "Kimberly", "attempt": "2"}, 
+            {"value": 77.262929, "playerName": "Kimberly", "attempt": "3"}                
+        ]
+    }
+]
+

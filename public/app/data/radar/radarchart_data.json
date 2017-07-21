@@ -1,0 +1,90 @@
+ [
+        {
+            "playerId": null,
+            "attempt": null,
+            "locationId": 1,
+            "baseline": true,
+            "data": [
+                { "axis": "Number of Dead Oaks", "value": 1 },
+                { "axis": "Percentage of Dead Oaks", "value": 5 },
+                { "axis": "Infected Area (ha)", "value": 6 },
+                { "axis": "Money Spent", "value": 2 },
+                { "axis": "Area Treated", "value": 1 },
+                { "axis": "Price per Oak", "value": 1 }
+            ],
+            "tableRows": [
+                { "column": "Number of Dead Oaks", "value": 56784 },
+                { "column": "Percentage of Dead Oaks", "value": 5.898 },
+                { "column": "Infected Area (ha)", "value": 3417 },
+                { "column": "Money Spent", "value": 0 },
+                { "column": "Area Treated", "value": 0 },
+                { "column": "Price per Oak", "value": 0 }
+            ]
+        },
+        {
+            "playerId": 2,
+            "attempt": "First",
+            "locationId": 1,
+            "baleline": false,
+            "data": [
+                { "axis": "Number of Dead Oaks", "value":3 },
+                { "axis": "Percentage of Dead Oaks", "value": 5},
+                { "axis": "Infected Area (ha)", "value": 7 },
+                { "axis": "Money Spent", "value": 2 },
+                { "axis": "Area Treated", "value": 5 },
+                { "axis": "Price per Oak", "value": 1 }
+            ],
+            "tableRows": [
+                { "column": "Number of Dead Oaks", "value": 56784 },
+                { "column": "Percentage of Dead Oaks", "value": 5.898 },
+                { "column": "Infected Area (ha)", "value": 3417 },
+                { "column": "Money Spent", "value": 796705 },
+                { "column": "Area Treated", "value": 59 },
+                { "column": "Price per Oak", "value": 59 }
+            ]
+        },
+        {
+            "playerId": 2,
+            "attempt": "Second",
+            "locationId": 1,
+            "baleline": false,
+            "data": [
+                { "axis": "Number of Dead Oaks", "value": 1 },
+                { "axis": "Percentage of Dead Oaks", "value": 3 },
+                { "axis": "Infected Area (ha)", "value": 1 },
+                { "axis": "Money Spent", "value": 3 },
+                { "axis": "Area Treated", "value": 2 },
+                { "axis": "Price per Oak", "value": 5 }
+            ],
+            "tableRows": [
+                { "column": "Number of Dead Oaks", "value": 33571 },
+                { "column": "Percentage of Dead Oaks", "value": 3.487 },
+                { "column": "Infected Area (ha)", "value": 2555 },
+                { "column": "Money Spent", "value": 1841047 },
+                { "column": "Area Treated", "value": 104 },
+                { "column": "Price per Oak", "value": 104 }
+            ]
+        },
+        {
+            "playerId": 2,
+            "attempt": "Third",
+            "locationId": 1,
+            "baleline": false,
+            "data": [
+                { "axis": "Number of Dead Oaks", "value": 5 },
+                { "axis": "Percentage of Dead Oaks", "value": 6 },
+                { "axis": "Infected Area (ha)", "value": 10 },
+                { "axis": "Money Spent", "value": 6 },
+                { "axis": "Area Treated", "value": 6 },
+                { "axis": "Price per Oak", "value": 8 }
+            ],
+            "tableRows": [
+                { "column": "Number of Dead Oaks", "value": 46111 },
+                { "column": "Percentage of Dead Oaks", "value": 4.79 },
+                { "column": "Infected Area (ha)", "value": 2762 },
+                { "column": "Money Spent", "value": 1176461 },
+                { "column": "Area Treated", "value": 61 },
+                { "column": "Price per Oak", "value": 61 }
+            ]
+        }
+]
