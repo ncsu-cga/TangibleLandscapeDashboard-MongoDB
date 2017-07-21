@@ -379,6 +379,22 @@ function eventsByLocation(divEle, loc) {
   });
 }
 
+function savePlayer(playerName) {
+  return $.ajax({
+    type: 'POST',
+    url: `${apiUrl}/player`,
+    data: JSON.stringify({ name: playerName }),
+    contentType: 'application/json',
+    dataType: 'json',
+    success: e => {
+      console.log('Player data sent.');
+    },
+    error: err => {
+      console.log('ERROR: Player data failed to send.', err);
+    }
+  });
+}
+
 function savePlay(locationId, eventId, playerId) {
   console.log({ locationId: locationId, eventId: eventId, playerId: playerId });
   $.ajax({
@@ -392,22 +408,6 @@ function savePlay(locationId, eventId, playerId) {
     },
     error: err => {
       console.log('ERROR: Play data failed to send.', err);
-    }
-  });
-}
-
-function savePlayer(playerName) {
-  return $.ajax({
-    type: 'POST',
-    url: `${apiUrl}/player`,
-    data: JSON.stringify({ name: playerName }),
-    contentType: 'application/json',
-    dataType: 'json',
-    success: e => {
-      console.log('Player data sent.');
-    },
-    error: err => {
-      console.log('ERROR: Player data failed to send.', err);
     }
   });
 }
@@ -436,12 +436,12 @@ function getRadarChartDataFile(locationId, eventId, playerId) {
   });
 }
 
-function getRadarChartDataById(id) {
-  return $.ajax({
-    type: 'GET',
-    url: `${apiUrl}/charts/radar/${id}`,
-  });
-}
+// function getRadarChartDataById(id) {
+//   return $.ajax({
+//     type: 'GET',
+//     url: `${apiUrl}/charts/radar/${id}`,
+//   });
+// }
 
 function getBarChartDataFile(locationId, eventId) {
   return $.ajax({

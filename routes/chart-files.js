@@ -293,7 +293,6 @@ router.delete('/radar/:id', (req, res) => {
                 message: err
             });
         }
-
         let options = {
             _id: files[0]._id,
             root: "radarDataFiles"
