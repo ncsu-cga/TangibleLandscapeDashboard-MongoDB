@@ -3,7 +3,7 @@ This application is created for the Tangible Landscape
 ## Installation
 
 #### Node.js
-*see <https://nodejs.org/en/download>  
+* see <https://nodejs.org/en/download>  
 
 #### MongoDB  
 1. Download installer from <https://www.mongodb.com/download-center#community> and follow instructions.  
@@ -38,8 +38,8 @@ node app.js
 ## API
 Sending files - all files needs to be JSON formatted files.  The format for the file can be found in the "*/public/app/data*" folder. 
 * Baselines for both radar and bar charts
-* Players radar charts
-* Event group bar chart
+* A Player's radar chart
+* An Event group bar chart
 
 URL | HTTP Methods | Content Type | Data 
 :---: | :---: | :---: | :---: 
