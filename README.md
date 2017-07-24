@@ -35,15 +35,35 @@ npm install
 node app.js
 ```
 
-## API
-Sending files - all files needs to be JSON formatted files.  The format for the file can be found in the "*/public/app/data*" folder. 
-* Baselines for both radar and bar charts
-* A Player's radar chart
-* An Event group bar chart
+## UNDER CONSTRUCTION - DO NOT USE 
 
-URL | HTTP Methods | Content Type | Data 
-:---: | :---: | :---: | :---: 
-charts/radarBaseline | POST | multipart/dataform | {file: "*xxx.json*", locationId: "*locationId*"}
-charts/barBaseline | POST | multipart/dataform | {file: "*xxx.json*", locationId: "*locationId*"}
-charts/radar | POST | multipart/dataform | {file: "*xxx.json*", locationId: "*locationId*", eventId: "*eventId*", playerId: "*playerId*"}
-charts/bar | POST | multipart/dataform | {file: "*xxx.json*", locationId: "*locationId*", eventId: "*eventId*"}
+* All parameters are required.
+
+#### Files 
+
+| URL | Method | URL Params | Data Params | Description | 
+| --- | --- | --- | --- | --- |
+charts/radarBaseline | POST | None | {u: {file: "*xxx.json*", locationId: "*locationId*"}}
+charts/barBaseline | POST | None | {u: {file: "*xxx.json*", locationId: "*locationId*"}}
+charts/radar | POST | None |{u: {{file: "*xxx.json*", locationId: "*locationId*", eventId: "*eventId*", playerId: "*playerId*"}}
+charts/bar | POST | None | {u: {file: "*xxx.json*", locationId: "*locationId*", eventId: "*eventId*"}}
+^charts/radarBaseline | GET | None | {locationId: "*locationId*"}
+^charts/barBaseline | GET | None | {locationId: "*locationId*"}
+charts/radar | GET | None | {locationId: "*locationId*", eventId: "*eventId*", playerId: "*playerId*"}
+charts/bar | GET | None | {locationId: "*locationId*", eventId: "*eventId*"}
+^charts/radarBaseline | DELETE | None | {locationId: "*locationId*"}
+^charts/barBaseline | DELETE | None |{locationId: "*locationId*"}
+charts/radar/:id | DELETE | id=[ *radar chart file ID* ] | None
+charts/bar/:id | DELETE | id=[ *bar chart file ID* ] | None
+
+
+#### Other
+
+| URL | Method | URL Params | Data Params | Description | Success Response |
+| --- | --- | --- | --- | --- | --- |
+/location | POST | None | {name: *name*, city: *city*, state: *state*} | Registers a new location. | Example {"__v": 0, "_id": 1, "name": "Raleigh", "county": "Wake", "state": "NC"}
+/location/:id | GET | id=[ *locationId* ] | None | Retrieves location information by location ID. | Example [{"_id": 1, "name": "Raleigh", "Wake": "Wake", "state": "NC", __v": 0}]
+/event | POST | None | {locationId: *locationId*, eventName: *eventName*}
+^^/event/location | GET | None | { location: *location* }
+
+

@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 router.post('/', (req, res) => {
     let location = new Location({
         name: req.body.name,
-        city: req.body.city,
+        county: req.body.county,
         state: req.body.state
     });
     Location.find({}, (err, locations) => {

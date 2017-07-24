@@ -10,7 +10,7 @@ const autoIncrement = require('mongoose-auto-increment');
 
 const locationSchema = new mongoose.Schema({
     name: {type: String, required: true, minlength: 1, trim: true},
-    city: {type: String, required: false, minlength: 0, trim: true},
+    county: {type: String, required: true, minlength: 1, trim: true},
     state: {type: String, required: true, minlength: 1, trim: true}
 });
 

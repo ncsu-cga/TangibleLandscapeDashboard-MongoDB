@@ -282,31 +282,6 @@ router.get('/barBaseline', (req, res) => {
 /**
  * DELETE - Delete file
  */
-router.delete('/radar/:id', (req, res) => {
-    gfs.collection('radarDataFiles');
-
-    let id = mongoose.Types.ObjectId(req.params.id);
-    gfs.files.find({ _id: id }).toArray((err, files) => {
-        if (!files || files.length === 0) {
-            return res.status(404).json({
-                state: fail,
-                message: err
-            });
-        }
-        let options = {
-            _id: files[0]._id,
-            root: "radarDataFiles"
-        }
-        gfs.remove(options, err => {
-            if (err) return handleError(err);
-            res.json({
-                status: true
-            });
-        });
-
-    });
-});
-
 router.delete('/radarBaseline', (req, res) => {
     gfs.collection('radarBaselineFiles');
 
@@ -334,31 +309,6 @@ router.delete('/radarBaseline', (req, res) => {
     });
 });
 
-router.delete('/bar/:id', (req, res) => {
-    gfs.collection('barDataFiles');
-    let id = mongoose.Types.ObjectId(req.params.id);
-    gfs.files.find({ _id: id }).toArray((err, files) => {
-        if (!files || files.length === 0) {
-            return res.status(404).json({
-                state: 'failure',
-                message: err
-            });
-        }
-
-        let options = {
-            _id: files[0]._id,
-            root: "barDataFiles"
-        }
-        gfs.remove(options, err => {
-            if (err) return handleError(err);
-            res.json({
-                status: true
-            });
-        });
-    });
-});
-
-
 router.delete('/barBaseline', (req, res) => {
     gfs.collection('barBaselineFiles');
     gfs.files.find({ 
@@ -374,6 +324,55 @@ router.delete('/barBaseline', (req, res) => {
         let options = {
             _id: files[0]._id,
             root: "barBaselineFiles"
+        }
+        gfs.remove(options, err => {
+            if (err) return handleError(err);
+            res.json({
+                status: true
+            });
+        });
+    });
+});
+
+router.delete('/radar/:id', (req, res) => {
+    gfs.collection('radarDataFiles');
+
+    let id = mongoose.Types.ObjectId(req.params.id);
+    gfs.files.find({ _id: id }).toArray((err, files) => {
+        if (!files || files.length === 0) {
+            return res.status(404).json({
+                state: fail,
+                message: err
+            });
+        }
+        let options = {
+            _id: files[0]._id,
+            root: "radarDataFiles"
+        }
+        gfs.remove(options, err => {
+            if (err) return handleError(err);
+            res.json({
+                status: true
+            });
+        });
+
+    });
+});
+
+router.delete('/bar/:id', (req, res) => {
+    gfs.collection('barDataFiles');
+    let id = mongoose.Types.ObjectId(req.params.id);
+    gfs.files.find({ _id: id }).toArray((err, files) => {
+        if (!files || files.length === 0) {
+            return res.status(404).json({
+                state: 'failure',
+                message: err
+            });
+        }
+
+        let options = {
+            _id: files[0]._id,
+            root: "barDataFiles"
         }
         gfs.remove(options, err => {
             if (err) return handleError(err);
