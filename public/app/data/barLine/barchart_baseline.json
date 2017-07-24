@@ -1,0 +1,45 @@
+[
+    {
+        "axis": "Number of Dead Oaks",
+        "options": false,
+        "values": [
+            {"value": 56784, "playerName": "Baseline", "attempt": ""},
+        ]
+    },
+    {
+        "axis": "Percentage of Dead Oaks",
+        "options": false,
+        "values":[
+            {"value": 5.898, "playerName": "Baseline", "attempt": ""},
+        ]
+    },
+    {
+        "axis": "Infected Area (ha)",
+        "options": false,
+        "values": [
+            {"value": 3417, "playerName": "Baseline", "attempt": ""},
+        ]
+    },
+    {
+        "axis": "Money Spent",
+        "options": {"money": true},
+        "values": [
+            {"value": 0, "playerName": "Baseline", "attempt": ""},
+        ]
+    },
+    {
+        "axis": "Area Treated (ha)",
+        "options": false,
+        "values": [
+            {"value": 0, "playerName": "Baseline", "attempt": ""},         
+        ]
+    },
+    {
+        "axis": "Price per Oak",
+        "options": {"negative": true},
+        "values": [
+            {"value": 0, "playerName": "Baseline", "attempt": ""},       
+        ]
+    }
+]
+
