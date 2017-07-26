@@ -370,7 +370,7 @@ function eventPost(name, locationId) {
   $.ajax({
     type: 'POST',
     url: `${apiUrl}/event`,
-    data: JSON.stringify({name, locationId}),
+    data: JSON.stringify({ name, locationId }),
     contentType: 'application/json',
     dataType: 'json',
     success: e => {
