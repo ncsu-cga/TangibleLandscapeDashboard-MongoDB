@@ -8,7 +8,6 @@ const app = express();
 app.use(bodyParser.json());
 
 router.post('/', (req, res) => {
-    console.log(req.body);
     let event = new Event({
         name: req.body.name,
         locationId: req.body.locationId
@@ -20,7 +19,6 @@ router.post('/', (req, res) => {
                 if (err) {
                     return err;
                 }
-                console.log('length 0', count);
                 return count;
             });
         }

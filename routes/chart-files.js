@@ -260,7 +260,7 @@ router.get('/radarBaseline', (req, res) => {
 
 router.get('/bar', (req, res) => {
     gfs.collection('barDataFiles'); //set collection name to lookup into
-    console.log('in bar', req.query);
+
     gfs.files.find({
         'metadata.info.locationId': req.query.locationId,
         'metadata.info.eventId': req.query.eventId

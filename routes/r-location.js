@@ -19,7 +19,6 @@ router.post('/', (req, res) => {
                 if (err) {
                     return err;
                 }
-                console.log('length 0', count);
                 //return count;
                 return;
             });
