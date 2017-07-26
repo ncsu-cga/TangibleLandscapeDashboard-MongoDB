@@ -1,5 +1,6 @@
 # TangibleLandscapeDashboard-MongoDB
-This application is created for the Tangible Landscape
+This application is created for the Tangible Landscape project (see <https://github.com/tangible-landscape/grass-tangible-landscape>).
+</br>
 ## Installation
 
 #### Node.js
@@ -21,6 +22,7 @@ This application is created for the Tangible Landscape
 #### Robo3T (formerly Robomongo - GUI for MongoDB)
 * Installation is optional.
 * See <https://robomongo.org>
+</br>
 
 ## Running Node.js server
 1. Download or clone the "TangibleLandscapeDashboard-MongoDB" folder
@@ -34,6 +36,7 @@ npm install
 ```
 node app.js
 ```
+</br>
 
 ## UNDER CONSTRUCTION - DO NOT USE 
 
