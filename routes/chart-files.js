@@ -236,15 +236,15 @@ router.get('/radarBaseline', (req, res) => {
 
 router.get('/bar', (req, res) => {
     gfs.collection('barDataFiles'); //set collection name to lookup into
-
+    console.log('in bar', req.query);
     gfs.files.find({
         'metadata.info.locationId': req.query.locationId,
         'metadata.info.eventId': req.query.eventId
     }).toArray((err, file) => {
-        if (!file) {
-            return res(400).json({
-                status: false,
-                message: 'No file found.'
+        console.log(err);
+        if (!file || file.length === 0) {
+            return res.status(400).json({
+               error: err
             });
         }
         let readstream = gfs.createReadStream({
@@ -285,7 +285,7 @@ router.get('/barBaseline', (req, res) => {
 router.delete('/radarBaseline', (req, res) => {
     gfs.collection('radarBaselineFiles');
 
-    gfs.files.find({ 
+    gfs.files.find({
         'metadata.info.locationId': req.query.locationId
     }).toArray((err, files) => {
         if (!files || files.length === 0) {
@@ -311,7 +311,7 @@ router.delete('/radarBaseline', (req, res) => {
 
 router.delete('/barBaseline', (req, res) => {
     gfs.collection('barBaselineFiles');
-    gfs.files.find({ 
+    gfs.files.find({
         'metadata.info.locationId': req.query.locationId
     }).toArray((err, files) => {
         if (!files || files.length === 0) {

@@ -10,7 +10,7 @@ const autoIncrement = require('mongoose-auto-increment');
 
 const EventSchema = new mongoose.Schema({
     name: {type: String, required: true, minlength: 1, trim: true},
-    location: {type: String, required: true, minlength: 1, trim: true}    
+    locationId: {type: String, required: true, minlength: 1, trim: true}    
 });
 
 autoIncrement.initialize(mongoose.connection);

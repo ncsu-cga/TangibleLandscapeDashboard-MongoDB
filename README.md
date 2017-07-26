@@ -62,8 +62,15 @@ charts/bar/:id | DELETE | id=[ *bar chart file ID* ] | None
 | URL | Method | URL Params | Data Params | Description | Success Response |
 | --- | --- | --- | --- | --- | --- |
 /location | POST | None | {name: *name*, city: *city*, state: *state*} | Registers a new location. | Example {"__v": 0, "_id": 1, "name": "Raleigh", "county": "Wake", "state": "NC"}
-/location/:id | GET | id=[ *locationId* ] | None | Retrieves location information by location ID. | Example [{"_id": 1, "name": "Raleigh", "Wake": "Wake", "state": "NC", __v": 0}]
-/event | POST | None | {locationId: *locationId*, eventName: *eventName*}
-^^/event/location | GET | None | { location: *location* }
+/location/:id | GET | id=*locationId* | None | Retrieves location information by location ID. | Example [{"_id": 1, "name": "Raleigh", "Wake": "Wake", "state": "NC", __v": 0}]
+/event | POST | None | {locationId: *locationId*, eventName: *eventName*} {"__v": 0, "_id": 1000, "name": "Fire 1", "locationId": "1"}
+/event/location/:id | GET | id=[*locationId*] | None | Retrieves all events for a location. | [{"_id": 1000, "name": "Fire 1", "locationId": "1", "__v": 0}]
+/player | POST | None | {name: *name*} | Registers player name. | {"__v": 0, "_id": 6, "name": "Amanda", "image": "24.png"}
+/player/players | GET | None | {_id: [*list of player ids*]} | Retrieves player names for provided ids. | [{"__v": 0, "_id": 6, "name": "Amanda", "image": "24.png"}, ...]
+/players/:eventId | GET | eventId=*eventId* | None | Retrieves all players by eventId
+/play | POST | None | {locationId: *locationId*, eventId: *eventId*, playerId: *playerId*} | Registers each play. | {"__v": 0, "_id": 13, "locationId": "1", "eventId": "1001",     "playerId": "7"}
+/play/:eventId | GET | eventId=*eventId* | Retrieve the play data by event Id. | None | [{"_id": 2, "locationId": "1", "eventId": "1002", "playerId": "7", "__v": 0}, ...]
+
+
 
 

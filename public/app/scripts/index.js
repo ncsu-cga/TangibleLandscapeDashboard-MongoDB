@@ -48,17 +48,18 @@ $('#sonoma-ca').on('click', e => {
 
 $('#event-save').on('click', () => {
   session.name = $('#event-name').val();
-  eventPost(session); // !! GET eventID
+  eventPost(session.name, session.locationId); // !! GET eventID
 });
 
 $('#sonama-ca-events').on('click', e => {
   session.locationId = 1;
-  session.location = 'Sonoma, CA';
-  eventsByLocation('#select-event', { location: 'Sonoma, CA' });
+  //session.location = 'Sonoma, CA';
+  eventsByLocation('#select-event', session.locationId);
 });
 
 $('#select-event').on('click', e => {
-  let eventInfo = e.target.text.split(':');
+  let eventInfo = e.target.text.split(': ');
+  console.log('eventInfo: ', eventInfo);
   session.eventId = Number(eventInfo[0]);
   session.eventName = eventInfo[1];
   $('li').removeClass();
@@ -153,6 +154,8 @@ function showPlayers() {
         });
         playerCardPanels(session.players);
       });
+    } else {
+      anonymous();
     }
   }, err => {
     console.log('ERROR: ', e);
@@ -202,6 +205,22 @@ function dropdownList(divEle, data) {
     .append('li')
     .append('a')
     .text(d => { return d; });
+}
+
+function anonymous() {
+  let col = $('<div class="col-md-3"></div>');
+  let card = $(
+    `<div class="card card-profile">
+        <div class="card-avatar">
+          <a href="#"><img class="img" src="app/images/Anonymous Mask icon 3.png" /></a>
+        </div>
+        <div class="content">
+          <h4 class="card-title">Anonymous</h4>
+          <p class="card-content">No players found</p>
+        </div>
+    </div>`);
+  card.appendTo(col);
+  col.appendTo('#all-players');
 }
 
 function playerCardPanels(data) {
@@ -269,10 +288,10 @@ function createRadarChart(locationId, eventId, playerId) {
     } else {
       let baseline = getRadarBaselineFile(locationId);
       baseline.then(base => {
-          dataObj = JSON.parse(base);
-          dataObj.map((rData, i) => {
-            d[i] = rData.data;
-          });
+        dataObj = JSON.parse(base);
+        dataObj.map((rData, i) => {
+          d[i] = rData.data;
+        });
         RadarChart('#player-radar', d, radarChartOptions); // RadarChart.js call
         tableVerticalHeader('#player-table', dataObj);
       }).fail(err => {
@@ -347,11 +366,11 @@ function tableVerticalHeader(ele, tdata) {
     });
 }
 
-function eventPost(data) {
+function eventPost(name, locationId) {
   $.ajax({
     type: 'POST',
     url: `${apiUrl}/event`,
-    data: JSON.stringify(data),
+    data: JSON.stringify({name, locationId}),
     contentType: 'application/json',
     dataType: 'json',
     success: e => {
@@ -367,11 +386,14 @@ function eventPost(data) {
 function eventsByLocation(divEle, loc) {
   $.ajax({
     type: 'GET',
-    url: `${apiUrl}/event/location`,
-    data: loc,
-    success: e => {
-      //console.log('Results', e);
-      dropdownList(divEle, e);
+    url: `${apiUrl}/event/location/${loc}`,
+    //data: loc,
+    success: events => {
+      console.log('Results', events);
+      let eventNames = events.map(item => {
+        return `${item._id}: ${item.name}`;
+      });
+      dropdownList(divEle, eventNames);
     },
     error: err => {
       console.log(err);
@@ -447,7 +469,13 @@ function getBarChartDataFile(locationId, eventId) {
   return $.ajax({
     type: 'GET',
     url: `${apiUrl}/charts/bar`,
-    data: { locationId, eventId }
+    data: { locationId, eventId },
+    success: d => {
+      return d;
+    },
+    error: err => {
+      return alert('No data found.');
+    }
   });
 }
 

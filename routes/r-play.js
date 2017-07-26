@@ -32,9 +32,21 @@ router.post('/', (req, res) => {
     });
 });
 
+
+router.get('/:eventId', (req, res) => {
+    console.log(req.params.eventId);
+    Play.find(req.params.eventId).then(plays => {
+        console.log(plays);
+        res.json(plays);
+    }, e => {
+        res.status(400).send(e);
+    });
+});
+
 router.get('/', (req, res) => {
+    console.log(req.query);
     Play.find(req.query).then(plays => {
-        console.log()
+        console.log(plays);
         res.json(plays);
     }, e => {
         res.status(400).send(e);

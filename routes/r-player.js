@@ -31,7 +31,7 @@ router.post('/', (req, res) => {
         }
     });
     player.save().then(doc => {
-        res.json(doc);
+        res.status(200).json(doc);
     }, e => {
         res.status(400).send(e);
     });

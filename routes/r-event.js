@@ -10,8 +10,8 @@ app.use(bodyParser.json());
 router.post('/', (req, res) => {
     console.log(req.body);
     let event = new Event({
-        locationId: req.body.locationId,
-        eventName: req.body.eventName,
+        name: req.body.name,
+        locationId: req.body.locationId
     });
 
     Event.find({}, (err, events) => {
@@ -26,22 +26,30 @@ router.post('/', (req, res) => {
         }
     });
     event.save().then(doc => {
-        res.status(200).send(doc);
+        res.status(200).json(doc);
     }, e => {
-        res.status(400).send(e);
+        res.status(400).json(e);
     });
 });
 
 
-router.get('/location', (req, res) => {
-    Event.find(req.query).then(events => {
-        let eventNames = events.map(obj => {
-            return `${obj._id}: ${obj.name}`;
-        })
-        res.send(eventNames);
+router.get('/location/:id', (req, res) => {
+    Event.find({locationId: req.params.id}).then(events => {
+        res.status(200).json(events);
     }, e => {
-        res.status(400).send(e);
+        res.status(400).json(e);
     });
 });
+
+// router.get('/location', (req, res) => {
+//     Event.find(req.query).then(events => {
+//         let eventNames = events.map(obj => {
+//             return `${obj._id}: ${obj.name}`;
+//         })
+//         res.json(eventNames);
+//     }, e => {
+//         res.status(400).json(e);
+//     });
+// });
 
 module.exports = router;
