@@ -43,19 +43,69 @@ node app.js
 
 | URL | Method | URL Params | Data Params | Description | 
 | --- | --- | --- | --- | --- |
-charts/radarBaseline | POST | None | {u: {file: "*xxx.json*", locationId: "*locationId*"}}
-charts/barBaseline | POST | None | {u: {file: "*xxx.json*", locationId: "*locationId*"}}
-charts/radar | POST | None |{u: {{file: "*xxx.json*", locationId: "*locationId*", eventId: "*eventId*", playerId: "*playerId*"}}
-charts/bar | POST | None | {u: {file: "*xxx.json*", locationId: "*locationId*", eventId: "*eventId*"}}
-^charts/radarBaseline | GET | None | {locationId: "*locationId*"}
-^charts/barBaseline | GET | None | {locationId: "*locationId*"}
-charts/radar | GET | None | {locationId: "*locationId*", eventId: "*eventId*", playerId: "*playerId*"}
-charts/bar | GET | None | {locationId: "*locationId*", eventId: "*eventId*"}
-^charts/radarBaseline | DELETE | None | {locationId: "*locationId*"}
-^charts/barBaseline | DELETE | None |{locationId: "*locationId*"}
-charts/radar/:id | DELETE | id=[ *radar chart file ID* ] | None
-charts/bar/:id | DELETE | id=[ *bar chart file ID* ] | None
+charts/radarBaseline | POST | None | {u: {file: "*xxx.json*", locationId: "*locationId*"}} | Registers a radar chart baseline data file.
+charts/barBaseline | POST | None | {u: {file: "*xxx.json*", locationId: "*locationId*"}} | Registers a bar chart baseline data file. 
+charts/radar | POST | None |{u: {{file: "*xxx.json*", locationId: "*locationId*", eventId: "*eventId*", playerId: "*playerId*"}} | Registers individual player's radar chart data file.
+charts/bar | POST | None | {u: {file: "*xxx.json*", locationId: "*locationId*", eventId: "*eventId*"}} | Registers bar chart data file.
 
+File POST services success response example:
+```
+{
+    "id": "5978c8211c6bed17f84dcb78",
+    "fileName": "file-1501087777316.json",
+    "metadata": {
+        "originalName": "barchart_baseline.json",
+        "info": {
+            "locationId": "1"
+        }
+    },
+    "state": "Success"
+}
+```
+</br>
+</br>
+
+| URL | Method | URL Params | Data Params | Description | 
+| --- | --- | --- | --- | --- |
+charts/radarBaseline | GET | None | {locationId: "*locationId*"} | Retrieves the radar chart baseline data by location Id.
+charts/barBaseline | GET | None | {locationId: "*locationId*"} | Retrieves the bar chart data by location Id.
+charts/radar | GET | None | {locationId: "*locationId*", eventId: "*eventId*", playerId: "*playerId*"} | Retrieves the radar chart data by given parameters.
+charts/bar | GET | None | {locationId: "*locationId*", eventId: "*eventId*"} | Retrieves the bar chart data by given by given parameters.
+
+</br>File GET services success response is stringified JSON data</br>
+Example - _/charts/bar?locationId=1&eventId=1002_
+```
+[
+    {
+        "axis": "Number of Dead Oaks",
+        "options": false,
+        "values": [
+            {"value": 56784, "playerName": "Baseline", "attempt": ""},
+            {"value": 52725, "playerName": "James", "attempt": "1"},
+            {"value": 58037, "playerName": "David", "attempt": "1"}
+        ]
+    }
+]
+```
+</br>
+</br>
+
+| URL | Method | URL Params | Data Params | Description | 
+| --- | --- | --- | --- | --- |
+charts/radarBaseline | DELETE | None | {locationId: "*locationId*"} | Deletes the radar chart file by location Id.
+charts/barBaseline | DELETE | None |{locationId: "*locationId*"} | Deletes the bar chart file by location Id.
+charts/radar/:id | DELETE | id=[ *radar chart file ID* ] | None | Deletes the individual player's radar chart data file.
+charts/bar/:id | DELETE | id=[ *bar chart file ID* ] | None | Deletes the individual player's radar chart data file.
+
+</br>File DELETE services success response example</br>
+```
+{
+    "state": "Success",
+    "message": "File deleted"
+}
+```
+</br>
+</br>
 
 #### Other
 
@@ -63,14 +113,12 @@ charts/bar/:id | DELETE | id=[ *bar chart file ID* ] | None
 | --- | --- | --- | --- | --- | --- |
 /location | POST | None | {name: *name*, city: *city*, state: *state*} | Registers a new location. | Example {"__v": 0, "_id": 1, "name": "Raleigh", "county": "Wake", "state": "NC"}
 /location/:id | GET | id=*locationId* | None | Retrieves location information by location ID. | Example [{"_id": 1, "name": "Raleigh", "Wake": "Wake", "state": "NC", __v": 0}]
-/event | POST | None | {locationId: *locationId*, eventName: *eventName*} {"__v": 0, "_id": 1000, "name": "Fire 1", "locationId": "1"}
-/event/location/:id | GET | id=[*locationId*] | None | Retrieves all events for a location. | [{"_id": 1000, "name": "Fire 1", "locationId": "1", "__v": 0}]
+/event | POST | None | {locationId: *locationId*, eventName: *eventName*} | Registers a event data. | {"__v": 0, "_id": 1000, "name": "Fire 1", "locationId": "1"}
+/event/location/:id | GET | id=*locationId* | None | Retrieves all events for a location. | [{"_id": 1000, "name": "Fire 1", "locationId": "1", "__v": 0}]
 /player | POST | None | {name: *name*} | Registers player name. | {"__v": 0, "_id": 6, "name": "Amanda", "image": "24.png"}
 /player/players | GET | None | {_id: [*list of player ids*]} | Retrieves player names for provided ids. | [{"__v": 0, "_id": 6, "name": "Amanda", "image": "24.png"}, ...]
-/players/:eventId | GET | eventId=*eventId* | None | Retrieves all players by eventId
 /play | POST | None | {locationId: *locationId*, eventId: *eventId*, playerId: *playerId*} | Registers each play. | {"__v": 0, "_id": 13, "locationId": "1", "eventId": "1001",     "playerId": "7"}
 /play/:eventId | GET | eventId=*eventId* | Retrieve the play data by event Id. | None | [{"_id": 2, "locationId": "1", "eventId": "1002", "playerId": "7", "__v": 0}, ...]
-
 
 
 
