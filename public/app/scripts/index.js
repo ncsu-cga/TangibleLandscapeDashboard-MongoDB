@@ -151,7 +151,6 @@ function showPlayers() {
       return obj.playerId;
     });
   }).then(playerIds => {
-    console.log('playerIds', playerIds);
     if (playerIds.length != 0) {
       playersByIds(playerIds).then(data => {
         session.players = data.map(obj => {
@@ -380,7 +379,7 @@ function eventPost(name, locationId) {
     contentType: 'application/json',
     dataType: 'json',
     success: e => {
-      console.log('data sent', e);
+      //console.log('data sent', e);
       session.eventId = e._id;
     },
     error: err => {
@@ -395,7 +394,7 @@ function eventsByLocation(divEle, loc) {
     url: `${apiUrl}/event/location/${loc}`,
     //data: loc,
     success: events => {
-      console.log('Results', events);
+      //console.log('Results', events);
       let eventNames = events.map(item => {
         return `${item._id}: ${item.name}`;
       });

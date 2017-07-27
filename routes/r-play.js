@@ -34,7 +34,6 @@ router.post('/', (req, res) => {
 
 
 router.get('/:eventId', (req, res) => {
-    console.log(req.params.eventId);
     Play.find(req.params.eventId).then(plays => {
         res.json(plays);
     }, e => {
