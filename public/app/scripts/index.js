@@ -60,6 +60,10 @@ $('#sonama-ca-events').on('click', e => {
 $('#select-event').on('click', e => {
   let eventInfo = e.target.text.split(': ');
   console.log('eventInfo: ', eventInfo);
+  if (session.eventId != eventInfo[0]){
+    clearElements();
+    //Need anonymous card for play nav
+  }
   session.eventId = Number(eventInfo[0]);
   session.eventName = eventInfo[1];
   $('li').removeClass();
@@ -167,6 +171,7 @@ function clearElements() {
   $('#all-players').empty();
   $('#player-radar').empty();
   $('#player-stats').empty();
+  //$('#radar-player-card').empty();
 }
 
 function showData() {

@@ -38,7 +38,7 @@ node app.js
 ```
 </br>
 
-## UNDER CONSTRUCTION - DO NOT USE 
+## API << UNDER CONSTRUCTION >>
 
 * All parameters are required.
 
