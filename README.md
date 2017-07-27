@@ -127,6 +127,17 @@ charts/bar/:id | DELETE | id=[ *bar chart file ID* ] | None | Deletes the indivi
 </br>
 
 ## Snapshots
+![index.html](https://github.com/mshukuno/TangibleLandscapeDashboard-MongoDB/tree/master/public/app/images/snapshots/index_small.png "index.html")
+</br>
+![tld.html#locations](https://github.com/mshukuno/TangibleLandscapeDashboard-MongoDB/tree/master/public/app/images/snapshots/tld-locations_small.png "tld.html#locations")
+</br>
+![tld.html#players](https://github.com/mshukuno/TangibleLandscapeDashboard-MongoDB/tree/master/public/app/images/snapshots/tld-players_small.png "tld.html#players")
+</br>
+![tld.html#play](https://github.com/mshukuno/TangibleLandscapeDashboard-MongoDB/tree/master/public/app/images/snapshots/tld-play_small.png "tld.html#play")
+</br>
+![tld.html#data](https://github.com/mshukuno/TangibleLandscapeDashboard-MongoDB/tree/master/public/app/images/snapshots/tld-data_small.png "tld.html#data")
+</br>
+</br>
 
 ## Resources
 * Animal Icons - <http://graphicburger.com/71-free-animal-icons>
