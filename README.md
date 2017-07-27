@@ -126,9 +126,12 @@ charts/bar/:id | DELETE | id=[ *bar chart file ID* ] | None | Deletes the indivi
 </br>
 </br>
 
+## Snapshots
+
 ## Resources
 * Animal Icons - <http://graphicburger.com/71-free-animal-icons>
 * Web Bootstrap Themes - <https://www.creative-tim.com>
+* Images (index.html background & tbl.html cards) - <https://www.pexels.com>
 * D3.js - <https://d3js.org>
 * D3 Tooltip - <https://github.com/Caged/d3-tip>
 * Radar Chart - <https://www.visualcinnamon.com/2015/10/different-look-d3-radar-chart.html>
