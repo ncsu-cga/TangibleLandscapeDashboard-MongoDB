@@ -123,12 +123,10 @@ charts/bar/:id | DELETE | id=[ *bar chart file ID* ] | None | Deletes the indivi
 /player/players | GET | None | {_id: [*list of player ids*]} | Retrieves player names for provided ids. | [{"__v": 0, "_id": 6, "name": "Amanda", "image": "24.png"}, ...]
 /play | POST | None | {locationId: *locationId*, eventId: *eventId*, playerId: *playerId*} | Registers each play. | {"__v": 0, "_id": 13, "locationId": "1", "eventId": "1001",     "playerId": "7"}
 /play/:eventId | GET | eventId=*eventId* | Retrieve the play data by event Id. | None | [{"_id": 20, "locationId": "1", "eventId": "1001", "playerId": "7", "playerName": "Tammy", "__v": 0}, ...]
-
-
 </br>
 </br>
-## Resources 
 
+## Resources
 * Animal Icons - <http://graphicburger.com/71-free-animal-icons>
 * Web Bootstrap Themes - <https://www.creative-tim.com>
 * D3.js - <https://d3js.org>
