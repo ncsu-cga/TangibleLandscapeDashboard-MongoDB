@@ -41,6 +41,7 @@ node app.js
 ## API << UNDER CONSTRUCTION >>
 
 * All parameters are required.
+* See JSON data format in "/public/app/data" folder.
 
 #### Files 
 
@@ -121,7 +122,21 @@ charts/bar/:id | DELETE | id=[ *bar chart file ID* ] | None | Deletes the indivi
 /player | POST | None | {name: *name*} | Registers player name. | {"__v": 0, "_id": 6, "name": "Amanda", "image": "24.png"}
 /player/players | GET | None | {_id: [*list of player ids*]} | Retrieves player names for provided ids. | [{"__v": 0, "_id": 6, "name": "Amanda", "image": "24.png"}, ...]
 /play | POST | None | {locationId: *locationId*, eventId: *eventId*, playerId: *playerId*} | Registers each play. | {"__v": 0, "_id": 13, "locationId": "1", "eventId": "1001",     "playerId": "7"}
-/play/:eventId | GET | eventId=*eventId* | Retrieve the play data by event Id. | None | [{"_id": 2, "locationId": "1", "eventId": "1002", "playerId": "7", "__v": 0}, ...]
+/play/:eventId | GET | eventId=*eventId* | Retrieve the play data by event Id. | None | [{"_id": 20, "locationId": "1", "eventId": "1001", "playerId": "7", "playerName": "Tammy", "__v": 0}, ...]
+
+
+</br>
+</br>
+## Resources 
+
+* Animal Icons - <http://graphicburger.com/71-free-animal-icons>
+* Web Bootstrap Themes - <https://www.creative-tim.com>
+* D3.js - <https://d3js.org>
+* D3 Tooltip - <https://github.com/Caged/d3-tip>
+* Radar Chart - <https://www.visualcinnamon.com/2015/10/different-look-d3-radar-chart.html>
+
+
+
 
 
 

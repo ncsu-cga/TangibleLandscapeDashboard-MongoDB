@@ -11,7 +11,8 @@ const autoIncrement = require('mongoose-auto-increment');
 const playSchema = new mongoose.Schema({
     locationId: {type: String, required: true, minlength: 1, trim: true},
     eventId: {type: String, required: true, minlength: 1, trim: true},
-    playerId: {type: String, required: true, minlength: 1, trim: true}
+    playerId: {type: String, required: true, minlength: 1, trim: true},
+    playerName: {type: String, required: true, minlength: 1, trim: true}
 });
 
 autoIncrement.initialize(mongoose.connection);

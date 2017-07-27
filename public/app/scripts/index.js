@@ -83,7 +83,7 @@ $('#player-save').on('click', e => {
     console.log(data);
     session.currentPlayer = data.name;
     session.currentPlayerId = data._id;
-    savePlay(session.locationId, session.eventId, session.currentPlayerId);
+    savePlay(session.locationId, session.eventId, session.currentPlayerId, currentPlayer);
   }, err => {
     console.log('ERROR: ', err);
   });
@@ -146,11 +146,12 @@ $('#ul-line').on('click', e => {
 
 function showPlayers() {
   clearElements();
-  playByLocEvent(session.locationId, session.eventId).then(res => {
+  playByLocEvent(session.eventId).then(res => {
     return res.map(obj => {
       return obj.playerId;
     });
   }).then(playerIds => {
+    console.log('playerIds', playerIds);
     if (playerIds.length != 0) {
       playersByIds(playerIds).then(data => {
         session.players = data.map(obj => {
@@ -422,12 +423,12 @@ function savePlayer(playerName) {
   });
 }
 
-function savePlay(locationId, eventId, playerId) {
+function savePlay(locationId, eventId, playerId, playerName) {
   console.log({ locationId: locationId, eventId: eventId, playerId: playerId });
   $.ajax({
     type: 'POST',
     url: `${apiUrl}/play`,
-    data: JSON.stringify({ locationId: locationId, eventId: eventId, playerId: playerId }),
+    data: JSON.stringify({ locationId, eventId, playerId, playerName }),
     contentType: 'application/json',
     dataType: 'json',
     success: e => {
@@ -447,11 +448,11 @@ function playersByIds(ids) {
   });
 }
 
-function playByLocEvent(locationId, eventId) {
+function playByLocEvent(eventId) {
   return $.ajax({
     type: 'GET',
     url: `${apiUrl}/play`,
-    data: { locationId, eventId }
+    data: { eventId }
   });
 }
 

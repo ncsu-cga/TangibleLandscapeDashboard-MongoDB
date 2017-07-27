@@ -11,7 +11,8 @@ router.post('/', (req, res) => {
     let play = new Play({
         locationId: req.body.locationId,
         eventId: req.body.eventId,
-        playerId: req.body.playerId
+        playerId: req.body.playerId,
+        playerName: req.body.playerName
     });
 
     Play.find({}, (err, plays) => {
