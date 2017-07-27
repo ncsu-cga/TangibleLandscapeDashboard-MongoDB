@@ -127,7 +127,7 @@ charts/bar/:id | DELETE | id=[ *bar chart file ID* ] | None | Deletes the indivi
 </br>
 
 ## Snapshots
-![index.html](https://github.com/mshukuno/TangibleLandscapeDashboard-MongoDB/tree/master/public/app/images/snapshots/index_small.png "index.html")
+![alt text](https://github.com/mshukuno/TangibleLandscapeDashboard-MongoDB/tree/master/public/app/images/snapshots/index_small.png "index.html")
 </br>
 ![tld.html#locations](https://github.com/mshukuno/TangibleLandscapeDashboard-MongoDB/tree/master/public/app/images/snapshots/tld-locations_small.png "tld.html#locations")
 </br>
