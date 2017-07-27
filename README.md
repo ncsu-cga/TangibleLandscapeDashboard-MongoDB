@@ -41,7 +41,8 @@ node app.js
 ## API << UNDER CONSTRUCTION >>
 
 * All parameters are required.
-* See JSON data format in "/public/app/data" folder.
+* See JSON data format in "**_/public/app/data_**" folder.
+* Currently, all **error response code are 400**.
 
 #### Files 
 
