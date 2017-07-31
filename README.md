@@ -116,7 +116,7 @@ charts/bar/:id | DELETE | id=[ *bar chart file ID* ] | None | Deletes the indivi
 
 | URL | Method | URL Params | Data Params | Description | Success Response |
 | --- | --- | --- | --- | --- | --- |
-/location | POST | None | {name: *name*, city: *city*, state: *state*} | Registers a new location. | Example {"__v": 0, "_id": 1, "name": "Raleigh", "county": "Wake", "state": "NC"}
+/location | POST | None | {name: *name*, county: *county*, state: *state*} | Registers a new location. | Example {"__v": 0, "_id": 1, "name": "Raleigh", "county": "Wake", "state": "NC"}
 /location/:id | GET | id=*locationId* | None | Retrieves location information by location ID. | Example [{"_id": 1, "name": "Raleigh", "Wake": "Wake", "state": "NC", __v": 0}]
 /event | POST | None | {locationId: *locationId*, eventName: *eventName*} | Registers a event data. | {"__v": 0, "_id": 1000, "name": "Fire 1", "locationId": "1"}
 /event/location/:id | GET | id=*locationId* | None | Retrieves all events for a location. | [{"_id": 1000, "name": "Fire 1", "locationId": "1", "__v": 0}]
