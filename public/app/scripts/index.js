@@ -83,7 +83,7 @@ $('#player-save').on('click', e => {
     console.log(data);
     session.currentPlayer = data.name;
     session.currentPlayerId = data._id;
-    savePlay(session.locationId, session.eventId, session.currentPlayerId, currentPlayer);
+    savePlay(session.locationId, session.eventId, session.currentPlayerId, session.currentPlayer);
   }, err => {
     console.log('ERROR: ', err);
   });
