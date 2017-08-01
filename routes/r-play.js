@@ -42,7 +42,6 @@ router.get('/:eventId', (req, res) => {
 });
 
 router.get('/', (req, res) => {
-    console.log(req.query);
     Play.find(req.query).then(plays => {
         res.json(plays);
     }, e => {

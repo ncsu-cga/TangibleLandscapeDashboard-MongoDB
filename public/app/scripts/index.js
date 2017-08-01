@@ -77,10 +77,8 @@ $('#select-event').on('click', e => {
 
 $('#player-save').on('click', e => {
   session.currentPlayer = $('#player-name').val();
-  console.log('player name: ', session.currentPlayer);
   let promise = savePlayer(session.currentPlayer);
   promise.then(data => {
-    console.log(data);
     session.currentPlayer = data.name;
     session.currentPlayerId = data._id;
     savePlay(session.locationId, session.eventId, session.currentPlayerId, session.currentPlayer);
@@ -90,7 +88,6 @@ $('#player-save').on('click', e => {
 });
 
 $('#show-players').on('click', e => {
-  console.log('session', session);
   showPlayers();
 });
 
