@@ -48,7 +48,6 @@ router.get('/players', (req, res) => {
 });
 
 router.get('/:eventId', (req, res) => {
-    console.log('WWWWWWW')
     Play.find({eventId: req.params.eventId}).then(plays => {
         let players = plays.map((item) => {
             return { playerId: item.playerId, playerName: item.playerName }

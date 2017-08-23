@@ -3,7 +3,7 @@ const router = express.Router();
 const bodyParser = require('body-parser');
 
 const { mongoose } = require('../db/mongoose');
-const Location = require('../models/location.js');
+const Location = require('../models/location');
 const app = express();
 app.use(bodyParser.json());
 
