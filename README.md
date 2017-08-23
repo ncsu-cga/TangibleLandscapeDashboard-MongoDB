@@ -122,8 +122,9 @@ charts/bar/:id | DELETE | id=[ *bar chart file ID* ] | None | Deletes the indivi
 /event/location/:id | GET | id=*locationId* | None | Retrieves all events for a location. | [{"_id": 1000, "name": "Fire 1", "locationId": "1", "__v": 0}]
 /player | POST | None | {name: *name*} | Registers player name. | {"__v": 0, "_id": 6, "name": "Amanda", "image": "24.png"}
 /player/players | GET | None | {_id: [*list of player ids*]} | Retrieves player names for provided ids. | [{"__v": 0, "_id": 6, "name": "Amanda", "image": "24.png"}, ...]
+/player/:eventId | GET | eventId=*eventId* | None | Retrieve players by event Id | [{pyerId": "7", "playerName": "Tammy"}, ...]
 /play | POST | None | {locationId: *locationId*, eventId: *eventId*, playerId: *playerId*} | Registers each play. | {"__v": 0, "_id": 13, "locationId": "1", "eventId": "1001",     "playerId": "7"}
-/play/:eventId | GET | eventId=*eventId* | Retrieve the play data by event Id. | None | [{"_id": 20, "locationId": "1", "eventId": "1001", "playerId": "7", "playerName": "Tammy", "__v": 0}, ...]
+/play/:eventId | GET | eventId=*eventId* | None | Retrieve the play data by event Id | [{"_id": 20, "locationId": "1", "eventId": "1001", "playerId": "7", "playerName": "Tammy", "__v": 0}, ...]
 </br>
 </br>
 
