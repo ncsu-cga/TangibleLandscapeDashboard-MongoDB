@@ -40,7 +40,6 @@ WORKDIR /tl-dasboard
 RUN git clone https://github.com/mshukuno/TangibleLandscapeDashboard-MongoDB.git /tl-dasboard
 RUN ln -s /usr/local/nvm/versions/node/v$NODE_VERSION/bin/node /usr/bin/node
 RUN npm install
-RUN sed -ie s/localhost/172.17.0.1/g db/mongoose.js
 EXPOSE 3000
-CMD ["node", "app.js"]
+
 

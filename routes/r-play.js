@@ -3,7 +3,7 @@ const router = express.Router();
 const bodyParser = require('body-parser');
 
 const { mongoose } = require('../db/mongoose');
-const Play = require('../models/play.js');
+const Play = require('../models/play');
 const app = express();
 app.use(bodyParser.json());
 

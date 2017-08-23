@@ -3,7 +3,8 @@ const router = express.Router();
 const bodyParser = require('body-parser');
 
 const { mongoose } = require('../db/mongoose');
-const Player = require('../models/player.js');
+const Player = require('../models/player');
+const Play = require('../models/play');
 const app = express();
 app.use(bodyParser.json());
 
@@ -47,7 +48,11 @@ router.get('/players', (req, res) => {
 });
 
 router.get('/:eventId', (req, res) => {
-    Player.find({eventId: req.params.eventId}).then(players => {
+    console.log('WWWWWWW')
+    Play.find({eventId: req.params.eventId}).then(plays => {
+        let players = plays.map((item) => {
+            return { playerId: item.playerId, playerName: item.playerName }
+        });
         res.json(players);
     }, e => {
         res.status(400).send(e);
