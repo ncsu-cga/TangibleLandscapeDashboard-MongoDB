@@ -21,7 +21,7 @@ const config = {
   divEle: '#bl-custom-chart',
   margin: { top: 80, right: 200, bottom: 80, left: 300 },
   heightDiv: '.content', // Div element that determin height of SVG
-  chartId: 'bl-charts',
+  chart: 'bl-charts',
   barDefault: 'Number of Dead Oaks',
   lineDefault: 'Money Spent',
   yLabelPad: 20,
@@ -75,6 +75,8 @@ $('#select-event').on('click', e => {
   showPlayers();
 });
 
+
+//**&&&& */
 $('#player-save').on('click', e => {
   session.currentPlayer = $('#player-name').val();
   let promise = savePlayer(session.currentPlayer);
@@ -231,17 +233,32 @@ function playerCardPanels(data) {
     let playerId = data[i - 1].playerId;
     let icon = data[i - 1].image;
     let col = $('<div class="col-md-3"></div>');
-    let card = $(
-      `<div class="card card-profile">
-        <div class="card-avatar">
-          <a href="#"><img class="img" src="app/images/animal_icons/${icon}" /></a>
-        </div>
-        <div class="content">
-          <h4 class="card-title">${player}</h4>
-          <p class="card-content">${playerId}</p>
-          <a id="player-${playerId}" href="#" class="btn btn-round play-btn" style="background-color: #4caf50;">Play</a>
-        </div>
-    </div>`);
+    let card = null;
+    if (playerId == session.currentPlayerId){
+      card = $(
+        `<div class="card card-profile">
+          <div class="card-avatar">
+            <a href="#"><img class="img" src="app/images/animal_icons/${icon}" /></a>
+          </div>
+          <div class="content">
+            <h4 class="card-title">${player}</h4>
+            <p class="card-content">${playerId}</p>
+            <a id="player-${playerId}" href="#" class="btn btn-round play-btn" style="background-color: #ef5350;">Playing</a>
+          </div>
+      </div>`);
+    } else {
+      card = $(
+        `<div class="card card-profile">
+          <div class="card-avatar">
+            <a href="#"><img class="img" src="app/images/animal_icons/${icon}" /></a>
+          </div>
+          <div class="content">
+            <h4 class="card-title">${player}</h4>
+            <p class="card-content">${playerId}</p>
+            <a id="player-${playerId}" href="#" class="btn btn-round play-btn" style="background-color: #4caf50;">Play</a>
+          </div>
+      </div>`);
+    }
     card.appendTo(col);
     col.appendTo('#all-players');
     // Add click event
