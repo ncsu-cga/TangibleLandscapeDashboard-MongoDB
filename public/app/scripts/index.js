@@ -81,25 +81,32 @@ $('#player-save').on('click', e => {
   // session.currentPlayer = $('#player-name').val();
   let player = $('#player-name').val();
   // let promise = savePlayer(session.currentPlayer);
-  let promise = savePlayer(player);
-  promise.then(data => {
-    // session.currentPlayer = data.name;
-    // session.currentPlayerId = data._id;
-    // savePlay(session.locationId, session.eventId, session.currentPlayerId, session.currentPlayer);
-    savePlay(session.locationId, session.eventId, data._id, data.name);
-    $('#player-profile').modal('hide');
-  }, err => {
-    console.log('ERROR: ', err);
-  });
+  if (player){
+    let promise = savePlayer(player);
+    promise.then(data => {
+      // session.currentPlayer = data.name;
+      // session.currentPlayerId = data._id;
+      // savePlay(session.locationId, session.eventId, session.currentPlayerId, session.currentPlayer);
+      savePlay(session.locationId, session.eventId, data._id, data.name);
+      $('#player-name').val('');
+      $('#player-profile').modal('hide');
+    }, err => {
+      console.log('ERROR: ', err);
+    });
+  } 
 });
 
 $('#player-profile').on('hidden.bs.modal', () => {
     showPlayers();
 });
 
-$('#show-players').on('click', e => {
-  showPlayers();
+$('#player-cancel').on('click', e => {
+  $('#player-name').val('');
 });
+
+// $('#show-players').on('click', e => {
+//   showPlayers();
+// });
 
 $('#radar-update').on('click', e => {
   clearElements();
