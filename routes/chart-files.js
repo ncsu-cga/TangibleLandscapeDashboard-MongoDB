@@ -114,7 +114,6 @@ router.post('/radar', (req, res) => {
     });
 });
 
-
 router.post('/bar', (req, res) => {
     barUpload(req, res, err => {
         if (err) {
@@ -140,13 +139,12 @@ router.post('/bar', (req, res) => {
     });
 });
 
-
 router.post('/radarBaseline', (req, res) => {
     radarBaseline(req, res, err => {
         if (err) {
             res.json({
                 state: 'Failure',
-                errDesc: err 
+                errDesc: err
             });
             return;
         }
@@ -166,13 +164,12 @@ router.post('/radarBaseline', (req, res) => {
     });
 });
 
-
 router.post('/barBaseline', (req, res) => {
     barBaseline(req, res, err => {
         if (err) {
-            res.json({ 
-                state: 'Failure', 
-                errDesc: err 
+            res.json({
+                state: 'Failure',
+                errDesc: err
             });
             return;
         }
@@ -238,6 +235,25 @@ router.get('/radar', (req, res) => {
     });
 });
 
+// GET radar chart file id
+router.get('/radarId', (req, res) => {
+    gfs.collection('radarDataFiles');
+
+    gfs.files.find({
+        'metadata.info.locationId': req.query.locationId,
+        'metadata.info.eventId': req.query.eventId,
+        'metadata.info.playerId': req.query.playerId
+    }).toArray((err, files) => {
+        if (!files || files.length === 0) {
+            return res.json({
+                state: 'Failure',
+                message: 'No file found.'
+            });
+        }
+        res.json(files);
+    });
+});
+
 router.get('/radarBaseline', (req, res) => {
     gfs.collection('radarBaselineFiles');
 
@@ -255,6 +271,23 @@ router.get('/radarBaseline', (req, res) => {
             root: 'radarBaselineFiles'
         });
         return readstream.pipe(res);
+    });
+});
+
+// GET radar baseline file id
+router.get('/radarBaselineId', (req, res) => {
+    gfs.collection('radarBaselineFiles');
+
+    gfs.files.find({
+        'metadata.info.locationId': req.query.locationId
+    }).toArray((err, files) => {
+        if (!files || files.length === 0) {
+            return res.json({
+                state: 'Failure',
+                message: 'No file found.'
+            });
+        }
+        res.json(files);
     });
 });
 
@@ -280,6 +313,23 @@ router.get('/bar', (req, res) => {
     });
 });
 
+// GET bar chart file id
+router.get('/barId', (req, res) => {
+    gfs.collection('barDataFiles');
+
+    gfs.files.find({
+      'metadata.info.locationId': req.query.locationId,
+      'metadata.info.eventId': req.query.eventId
+    }).toArray((err, files) => {
+        if (!files || files.length === 0) {
+            return res.json({
+                state: 'Failure',
+                message: 'No file found.'
+            });
+        }
+        res.json(files);
+    });
+});
 
 router.get('/barBaseline', (req, res) => {
     gfs.collection('barBaselineFiles'); //set collection name to lookup into
@@ -301,7 +351,22 @@ router.get('/barBaseline', (req, res) => {
     });
 });
 
+// GET bar chart baseline id
+router.get('/barBaselineId', (req, res) => {
+  gfs.collection('barBaselineFiles');
 
+  gfs.files.find({
+    'metadata.info.locationId': req.query.locationId
+  }).toArray((err, files) => {
+      if (!files || files.length === 0) {
+          return res.json({
+              state: 'Failure',
+              message: 'No file found.'
+          });
+      }
+      res.json(files);
+  });
+});
 
 
 /**

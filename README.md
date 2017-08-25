@@ -72,10 +72,14 @@ File POST services success response example:
 
 | URL | Method | URL Params | Data Params | Description | 
 | --- | --- | --- | --- | --- |
-charts/radarBaseline | GET | None | {locationId: "*locationId*"} | Retrieves the radar chart baseline data by location Id.
-charts/barBaseline | GET | None | {locationId: "*locationId*"} | Retrieves the bar chart data by location Id.
+charts/radarBaseline | GET | None | {locationId: "*locationId*"} | Retrieves the radar chart baseline data by location ID.
+charts/radarBaselineId | GET | None | {locationId: "*locationId*"} | Retrieves the radar chart baseline file ID.
+charts/barBaseline | GET | None | {locationId: "*locationId*"} | Retrieves the bar chart data by location ID.
+charts/barBaselineId | GET | None | {locationId: "*locationId*"} | Retrieves the bar chart baseline file ID.
 charts/radar | GET | None | {locationId: "*locationId*", eventId: "*eventId*", playerId: "*playerId*"} | Retrieves the radar chart data by given parameters.
-charts/bar | GET | None | {locationId: "*locationId*", eventId: "*eventId*"} | Retrieves the bar chart data by given by given parameters.
+charts/radarId | GET | None | {locationId: "*locationId*", eventId: "*eventId*", playerId: "*playerId*"} | Retrieves the radar chart file ID by given parameters.
+charts/bar | GET | None | {locationId: "*locationId*", eventId: "*eventId*"} | Retrieves the bar chart data by given parameters.
+charts/barId | GET | None | {locationId: "*locationId*", eventId: "*eventId*"} | Retrieves the bar chart file ID by given parameters.
 
 </br>File GET services success response is stringified JSON data</br>
 Example - _/charts/bar?locationId=1&eventId=1002_
@@ -97,8 +101,8 @@ Example - _/charts/bar?locationId=1&eventId=1002_
 
 | URL | Method | URL Params | Data Params | Description | 
 | --- | --- | --- | --- | --- |
-charts/radarBaseline | DELETE | None | {locationId: "*locationId*"} | Deletes the radar chart file by location Id.
-charts/barBaseline | DELETE | None |{locationId: "*locationId*"} | Deletes the bar chart file by location Id.
+charts/radarBaseline | DELETE | None | {locationId: "*locationId*"} | Deletes the radar chart file by location ID.
+charts/barBaseline | DELETE | None |{locationId: "*locationId*"} | Deletes the bar chart file by location ID.
 charts/radar/:id | DELETE | id=[ *radar chart file ID* ] | None | Deletes the individual player's radar chart data file.
 charts/bar/:id | DELETE | id=[ *bar chart file ID* ] | None | Deletes the individual player's radar chart data file.
 
