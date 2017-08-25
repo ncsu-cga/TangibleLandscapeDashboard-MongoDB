@@ -81,7 +81,7 @@ charts/radarId | GET | None | {locationId: "*locationId*", eventId: "*eventId*",
 charts/bar | GET | None | {locationId: "*locationId*", eventId: "*eventId*"} | Retrieves the bar chart data by given parameters.
 charts/barId | GET | None | {locationId: "*locationId*", eventId: "*eventId*"} | Retrieves the bar chart file ID by given parameters.
 
-</br>File GET services success response is stringified JSON data</br>
+</br>Retriving file data</br>
 Example - _/charts/bar?locationId=1&eventId=1002_
 ```
 [
@@ -93,6 +93,29 @@ Example - _/charts/bar?locationId=1&eventId=1002_
             {"value": 52725, "playerName": "James", "attempt": "1"},
             {"value": 58037, "playerName": "David", "attempt": "1"}
         ]
+    }
+]
+```
+<br>Retrieving file id</br>
+Example - _/charts/barId?locationId=1&eventId=1002_
+```
+[
+    {
+        "_id": "596e01ed13de3c248091ef41",
+        "filename": "file-1500381677591.json",
+        "contentType": "application/octet-stream",
+        "length": 8098,
+        "chunkSize": 261120,
+        "uploadDate": "2017-07-18T12:41:17.664Z",
+        "aliases": null,
+        "metadata": {
+            "originalName": "barchart_data.json",
+            "info": {
+                "locationId": "1",
+                "eventId": "1002"
+            }
+        },
+        "md5": "4250a628392c694d96f7e0a61cdb2482"
     }
 ]
 ```
