@@ -92,14 +92,14 @@ const barBaseline = multer({ storage: storageBarBaseline }).any();
 router.post('/radar', (req, res) => {
     radarUpload(req, res, err => {
         if (err) {
-            res.json({
+            res.status(400).json({
                 state: 'Failure',
                 errDesc: err
             });
             return;
         }
         else if (req.files.length === 0) {
-            res.json({
+            res.status(400).json({
                 state: 'Failure',
                 message: 'No file found'
             });
@@ -117,14 +117,14 @@ router.post('/radar', (req, res) => {
 router.post('/bar', (req, res) => {
     barUpload(req, res, err => {
         if (err) {
-            res.json({
+            res.status(400).json({
                 state: 'Failure',
                 errDesc: err
             });
             return;
         }
         else if (req.files.length === 0) {
-            res.json({
+            res.status(400).json({
                 state: 'Failure',
                 message: 'No file found'
             });
@@ -142,14 +142,14 @@ router.post('/bar', (req, res) => {
 router.post('/radarBaseline', (req, res) => {
     radarBaseline(req, res, err => {
         if (err) {
-            res.json({
+            res.status(400).json({
                 state: 'Failure',
                 errDesc: err
             });
             return;
         }
         else if (req.files.length === 0) {
-            res.json({
+            res.status(400).json({
                 state: 'Failure',
                 message: 'No file found'
             });
@@ -167,14 +167,14 @@ router.post('/radarBaseline', (req, res) => {
 router.post('/barBaseline', (req, res) => {
     barBaseline(req, res, err => {
         if (err) {
-            res.json({
+            res.status(400).json({
                 state: 'Failure',
                 errDesc: err
             });
             return;
         }
         else if (req.files.length === 0) {
-            res.json({
+            res.status(400).json({
                 state: 'Failure',
                 message: 'No file found'
             });
@@ -222,7 +222,7 @@ router.get('/radar', (req, res) => {
         'metadata.info.playerId': req.query.playerId
     }).toArray((err, files) => {
         if (!files || files.length === 0) {
-            return res.json({
+            return res.status(400).json({
                 state: 'Failure',
                 message: 'No file found.'
             });
@@ -245,7 +245,7 @@ router.get('/radarId', (req, res) => {
         'metadata.info.playerId': req.query.playerId
     }).toArray((err, files) => {
         if (!files || files.length === 0) {
-            return res.json({
+            return res.status(400).json({
                 state: 'Failure',
                 message: 'No file found.'
             });
@@ -282,7 +282,7 @@ router.get('/radarBaselineId', (req, res) => {
         'metadata.info.locationId': req.query.locationId
     }).toArray((err, files) => {
         if (!files || files.length === 0) {
-            return res.json({
+            return res.status(400).json({
                 state: 'Failure',
                 message: 'No file found.'
             });
@@ -322,7 +322,7 @@ router.get('/barId', (req, res) => {
       'metadata.info.eventId': req.query.eventId
     }).toArray((err, files) => {
         if (!files || files.length === 0) {
-            return res.json({
+            return res.status(400).json({
                 state: 'Failure',
                 message: 'No file found.'
             });
@@ -359,7 +359,7 @@ router.get('/barBaselineId', (req, res) => {
     'metadata.info.locationId': req.query.locationId
   }).toArray((err, files) => {
       if (!files || files.length === 0) {
-          return res.json({
+          return res.status(400).json({
               state: 'Failure',
               message: 'No file found.'
           });
@@ -380,7 +380,7 @@ router.delete('/radarBaseline', (req, res) => {
         'metadata.info.locationId': req.query.locationId
     }).toArray((err, files) => {
         if (!files || files.length === 0) {
-            return res.status(404).json({
+            return res.status(400).json({
                 state: 'Failure',
                 message: err
             });
@@ -407,7 +407,7 @@ router.delete('/barBaseline', (req, res) => {
         'metadata.info.locationId': req.query.locationId
     }).toArray((err, files) => {
         if (!files || files.length === 0) {
-            return res.status(404).json({
+            return res.status(400).json({
                 state: 'Failure',
                 message: err
             });
@@ -433,7 +433,7 @@ router.delete('/radar/:id', (req, res) => {
     let id = mongoose.Types.ObjectId(req.params.id);
     gfs.files.find({ _id: id }).toArray((err, files) => {
         if (!files || files.length === 0) {
-            return res.status(404).json({
+            return res.status(400).json({
                 state: 'Failure',
                 message: err
             });
@@ -458,7 +458,7 @@ router.delete('/bar/:id', (req, res) => {
     let id = mongoose.Types.ObjectId(req.params.id);
     gfs.files.find({ _id: id }).toArray((err, files) => {
         if (!files || files.length === 0) {
-            return res.status(404).json({
+            return res.status(400).json({
                 state: 'Failure',
                 message: err
             });
