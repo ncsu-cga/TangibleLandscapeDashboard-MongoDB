@@ -244,19 +244,23 @@ function anonymous() {
 
 function playerCardPanels(data) {
   for (let i = 1; i <= data.length; i++) {
-    let player = data[i - 1].name;
+    let playerName = data[i - 1].name;
     let playerId = data[i - 1].playerId;
     let icon = data[i - 1].image;
     let col = $('<div class="col-md-3"></div>');
     let card = null;
+    console.log(session.locationId, session.eventId, playerId, playerName);
     if (playerId == session.currentPlayerId){
+      currentDelete();
+      currentPost(session.locationId, session.eventId, playerId, playerName);
+      
       card = $(
         `<div class="card card-profile">
           <div class="card-avatar">
             <a href="#"><img class="img" src="app/images/animal_icons/${icon}" /></a>
           </div>
           <div class="content">
-            <h4 class="card-title">${player}</h4>
+            <h4 class="card-title">${playerName}</h4>
             <p class="card-content">${playerId}</p>
             <a id="player-${playerId}" href="#" class="btn btn-round play-btn" style="background-color: #ef5350;">Playing</a>
           </div>
@@ -268,7 +272,7 @@ function playerCardPanels(data) {
             <a href="#"><img class="img" src="app/images/animal_icons/${icon}" /></a>
           </div>
           <div class="content">
-            <h4 class="card-title">${player}</h4>
+            <h4 class="card-title">${playerName}</h4>
             <p class="card-content">${playerId}</p>
             <a id="player-${playerId}" href="#" class="btn btn-round play-btn" style="background-color: #4caf50;">Play</a>
           </div>
@@ -286,7 +290,7 @@ function playerCardPanels(data) {
       $('#play').show();
       $('#nav-play').parent().addClass('active');
       $('#play-icon').attr('src', `${imageDir}/${icon}`);
-      $('#player-card-name').html(player);
+      $('#player-card-name').html(playerName);
       $('#player-card-id').html(playerId);
       createRadarChart(session.locationId, session.eventId, session.currentPlayerId);
     });
@@ -492,6 +496,34 @@ function getRadarChartDataFile(locationId, eventId, playerId) {
   });
 }
 
+function currentPost(locationId, eventId, playerId, playerName) {
+  $.ajax({
+    type: 'POST',
+    url: `${apiUrl}/current`,
+    data: JSON.stringify({locationId, eventId, playerId, playerName}),
+    contentType: 'application/json',
+    dataType: 'json',
+    success: e => {
+      console.log('data sent', e);
+    },
+    error: err => {
+      console.log(err);
+    }
+  });
+}
+
+function currentDelete() {
+  $.ajax({
+    type: 'DELETE',
+    url: `${apiUrl}/current`,
+    success: e => {
+      console.log(e);
+    },
+    error: err => {
+      console.log(err);
+    }
+  });
+}
 // function getRadarChartDataById(id) {
 //   return $.ajax({
 //     type: 'GET',

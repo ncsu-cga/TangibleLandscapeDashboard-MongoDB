@@ -1,3 +1,5 @@
+require('./config/config');
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const exphbs = require('express-handlebars');
@@ -8,6 +10,7 @@ const events = require('./routes/r-event');
 const players = require('./routes/r-player');
 const plays = require('./routes/r-play');
 const locations = require('./routes/r-location');
+const currents = require('./routes/r-current');
 // const {Event} = require('./models/event');
 
 const app = express();
@@ -19,6 +22,7 @@ app.use('/event', events);
 app.use('/player', players);
 app.use('/play', plays);
 app.use('/location', locations);
+app.use('/current', currents);
 app.use(express.static(__dirname + '/public'));
 
 // View Engine
@@ -46,3 +50,5 @@ app.use(express.static(__dirname + '/public'));
 app.listen(3000, () => {
     console.log('Started on port 3000');
 });
+
+module.exports = app;

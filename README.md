@@ -152,6 +152,10 @@ charts/bar/:id | DELETE | id=[ *bar chart file ID* ] | None | Deletes the indivi
 /player/:eventId | GET | eventId=*eventId* | None | Retrieve players by event Id | [{pyerId": "7", "playerName": "Tammy"}, ...]
 /play | POST | None | {locationId: *locationId*, eventId: *eventId*, playerId: *playerId*} | Registers each play. | {"__v": 0, "_id": 13, "locationId": "1", "eventId": "1001",     "playerId": "7"}
 /play/:eventId | GET | eventId=*eventId* | None | Retrieve the play data by event Id | [{"_id": 20, "locationId": "1", "eventId": "1001", "playerId": "7", "playerName": "Tammy", "__v": 0}, ...]
+/current | POST | None | {locationId: *locationId*, eventId: *eventId*, playerId: *playerId*,playerName: *playerName*} | Register a current play information | {"__v": 0, "_id": 1, "locationId": "1", "eventId": "1000", "playerId": "8", "playerName": "Sasaki"}
+/current | GET | None | None | Retrieve all current play infomation | {"__v": 0, "_id": 1, "locationId": "1", "eventId": "1000", "playerId": "8", "playerName": "Sasaki"}
+/current | DELETE | None | None | Delete all current play data | {"delete": "success"}
+
 </br>
 </br>
 
