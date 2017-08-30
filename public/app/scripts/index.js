@@ -249,11 +249,10 @@ function playerCardPanels(data) {
     let icon = data[i - 1].image;
     let col = $('<div class="col-md-3"></div>');
     let card = null;
-    console.log(session.locationId, session.eventId, playerId, playerName);
     if (playerId == session.currentPlayerId){
-      currentDelete();
-      currentPost(session.locationId, session.eventId, playerId, playerName);
-      
+      // currentDelete();
+      // currentPost(session.locationId, session.eventId, playerId, playerName);
+      //currentGet();
       card = $(
         `<div class="card card-profile">
           <div class="card-avatar">
@@ -283,7 +282,12 @@ function playerCardPanels(data) {
     // Add click event
     $(`#player-${playerId}`).on('click', e => {
       session.currentPlayerId = playerId;
+      session.currentPlayer = playerName;
+      currentDelete();
+      currentPost(session.locationId, session.eventId, session.currentPlayerId, session.currentPlayer);
+      console.log('CURRENT: ', session.locationId, session.eventId, session.currentPlayerId, session.currentPlayer);
       hideContentsDivs();
+      //currentGet();
       let $this = $(e.currentTarget);
       $('#players').hide();
       $('#nav-players').parent().removeClass();
@@ -524,6 +528,21 @@ function currentDelete() {
     }
   });
 }
+
+// function currentGet() {
+//   return $.ajax({
+//     type: 'GET',
+//     url: `${apiUrl}/current`,
+//     success: d => {
+//       console.log(d);
+//       return d;
+//     },
+//     error: err => {
+//       return alert('No data found.');
+//     }
+//   });
+// }
+
 // function getRadarChartDataById(id) {
 //   return $.ajax({
 //     type: 'GET',
