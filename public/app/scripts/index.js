@@ -306,6 +306,7 @@ function playerCardPanels(data) {
       hideContentsDivs();
       //currentGet();
       let $this = $(e.currentTarget);
+      console.log($this);
       $('#players').hide();
       $('#nav-players').parent().removeClass();
       $('#play').show();
@@ -313,7 +314,7 @@ function playerCardPanels(data) {
       $('#play-icon').attr('src', `${imageDir}/${icon}`);
       $('#player-card-name').html(playerName);
       $('#player-card-id').html(playerId);
-      createRadarChart(session.locationId, session.eventId, session.currentPlayerId);
+      createRadarChart(session.locationId, session.eventId, playerId);
     });
   }
 }

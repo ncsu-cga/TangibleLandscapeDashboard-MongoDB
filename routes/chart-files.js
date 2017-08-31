@@ -194,7 +194,6 @@ router.get('/radar', (req, res) => {
         'metadata.info.eventId': req.query.eventId,
         'metadata.info.playerId': req.query.playerId
     }).toArray((err, files) => {
-        console.log(files);
         if (!files || files.length === 0) {
             return res.status(404).json({
                 state: 'Failure',
