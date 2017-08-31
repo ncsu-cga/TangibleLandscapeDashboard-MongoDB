@@ -1,6 +1,7 @@
 const { ObjectId } = require('mongodb');
 
 const Current = require('./../../models/current');
+const Files = require('./../../models/chart-files');
 
 const current200 = new Current({
   locationId: 1,
@@ -25,6 +26,5 @@ const populateCurrent = done => {
     current200.save();
   }).then(() => done());
 }
-
 
 module.exports = {current200, current400, deleteAllCurrent, populateCurrent};

@@ -7,7 +7,6 @@ const {current200, current400, deleteAllCurrent, populateCurrent} = require('./s
 
 //beforeEach(populateCurrents);
 
-
 describe('CURRENT', () => {
   
   describe('#POST /current', () => {
@@ -39,8 +38,8 @@ describe('CURRENT', () => {
 
   });
 
+  before(populateCurrent);
   describe('#GET /current', () => {
-    before(populateCurrent);
     it('should get one current', done => {
       request(app)
         .get('/current')
@@ -56,20 +55,15 @@ describe('CURRENT', () => {
     });
   });
 
+  before(populateCurrent);
   describe('#DELETE /current', () => {
-    before(populateCurrent);
     it('delete all', done => {
-      
-      Current.find({}).then(data => {
-        console.log(data);
-      })
       request(app)
         .delete('/current')
         .expect(200)
         .end((err, res) => {
           if (err) throw err;
           Current.find({}).then(data => {
-            console.log(data);
             expect(data.length).toBe(0);
             done();
           }).catch(err => done(err));
