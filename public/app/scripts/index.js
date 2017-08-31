@@ -1,7 +1,6 @@
 'use strict';
 
 $(document).ready(() => {
-  $('[data-toggle="tooltip"]').tooltip();
 });
 
 const apiUrl = 'http://localhost:3000';
@@ -40,6 +39,13 @@ const config = {
     ]
   }
 }
+
+function mouseEnterSounds() {
+  let audio = $('#sound-select')[0]
+  audio.play();
+}
+
+$('[data-toggle="tooltip"]').tooltip();
 
 $('#sonoma-ca').on('click', e => {
   let $this = $(e.currentTarget);
@@ -251,12 +257,12 @@ function playerCardPanels(data) {
     let card = null;
     if (playerId == session.currentPlayerId){
       card = $(
-        `<div class="card card-profile">
+        `<div class="card card-profile" onmouseenter="mouseEnterSounds()">
           <div class="card-avatar">
             <a href="#"><img class="img" src="app/images/animal_icons/${icon}" /></a>
           </div>
           <div class="content">
-            <h4 class="card-title">${playerName}</h4>
+            <h3 class="card-title" style="font-weight: bold;">${playerName}</h3>
             <p class="card-content">${playerId}</p>
             <a id="player-${playerId}" href="#" class="btn btn-round play-btn" style="background-color: #ef5350;">Playing</a>
             <button id="dataview-${playerId}" type="button" class="btn btn-info btn-fab btn-fab-mini btn-round"
@@ -266,12 +272,12 @@ function playerCardPanels(data) {
       </div>`);
     } else {
       card = $(
-        `<div class="card card-profile">
+        `<div class="card card-profile" onmouseenter="mouseEnterSounds()">
           <div class="card-avatar">
             <a href="#"><img class="img" src="app/images/animal_icons/${icon}" /></a>
           </div>
           <div class="content">
-            <h4 class="card-title">${playerName}</h4>
+            <h3 class="card-title">${playerName}</h3>
             <p class="card-content">${playerId}</p>
             <a id="player-${playerId}" href="#" class="btn btn-round play-btn" style="background-color: #4caf50;">Play</a>
             <button id="dataview-${playerId}" type="button" class="btn btn-info btn-fab btn-fab-mini btn-round"

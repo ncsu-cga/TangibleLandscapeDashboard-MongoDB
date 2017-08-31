@@ -217,7 +217,7 @@ circle {
 .card.card-profile:hover{
   /* background-color: #99CD30;
   opacity: 0.7; */
-  box-shadow: inset 0 0 1em #EC407A, 0 0 1em #EC407A;
+  box-shadow: inset 0 0 1em #99CD30, 0 0 1em #99CD30;
   opacity: 0.9;
 }
 
