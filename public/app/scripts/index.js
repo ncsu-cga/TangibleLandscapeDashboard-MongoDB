@@ -1,7 +1,7 @@
 'use strict';
 
 $(document).ready(() => {
-
+  $('[data-toggle="tooltip"]').tooltip();
 });
 
 const apiUrl = 'http://localhost:3000';
@@ -250,9 +250,6 @@ function playerCardPanels(data) {
     let col = $('<div class="col-md-3"></div>');
     let card = null;
     if (playerId == session.currentPlayerId){
-      // currentDelete();
-      // currentPost(session.locationId, session.eventId, playerId, playerName);
-      //currentGet();
       card = $(
         `<div class="card card-profile">
           <div class="card-avatar">
@@ -262,6 +259,9 @@ function playerCardPanels(data) {
             <h4 class="card-title">${playerName}</h4>
             <p class="card-content">${playerId}</p>
             <a id="player-${playerId}" href="#" class="btn btn-round play-btn" style="background-color: #ef5350;">Playing</a>
+            <button id="dataview-${playerId}" type="button" class="btn btn-info btn-fab btn-fab-mini btn-round"
+            data-toggle="tooltip" data-placement="top" title="View data">
+            <i class="material-icons">visibility</i></button>
           </div>
       </div>`);
     } else {
@@ -274,6 +274,9 @@ function playerCardPanels(data) {
             <h4 class="card-title">${playerName}</h4>
             <p class="card-content">${playerId}</p>
             <a id="player-${playerId}" href="#" class="btn btn-round play-btn" style="background-color: #4caf50;">Play</a>
+            <button id="dataview-${playerId}" type="button" class="btn btn-info btn-fab btn-fab-mini btn-round"
+            data-toggle="tooltip" data-placement="top" title="View data">
+            <i class="material-icons">visibility</i></button>
           </div>
       </div>`);
     }
@@ -286,6 +289,20 @@ function playerCardPanels(data) {
       currentDelete();
       currentPost(session.locationId, session.eventId, session.currentPlayerId, session.currentPlayer);
       console.log('CURRENT: ', session.locationId, session.eventId, session.currentPlayerId, session.currentPlayer);
+      hideContentsDivs();
+      //currentGet();
+      let $this = $(e.currentTarget);
+      $('#players').hide();
+      $('#nav-players').parent().removeClass();
+      $('#play').show();
+      $('#nav-play').parent().addClass('active');
+      $('#play-icon').attr('src', `${imageDir}/${icon}`);
+      $('#player-card-name').html(playerName);
+      $('#player-card-id').html(playerId);
+      createRadarChart(session.locationId, session.eventId, session.currentPlayerId);
+    });
+
+    $(`#dataview-${playerId}`).on('click', e => {
       hideContentsDivs();
       //currentGet();
       let $this = $(e.currentTarget);
