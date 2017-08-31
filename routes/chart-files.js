@@ -272,7 +272,6 @@ router.get('/bar', (req, res) => {
         'metadata.info.locationId': req.query.locationId,
         'metadata.info.eventId': req.query.eventId
     }).toArray((err, file) => {
-        console.log(err);
         if (!file || file.length === 0) {
             return res.status(404).json({
                 state: 'Failure',
