@@ -290,8 +290,6 @@ function playerCardPanels(data) {
       currentPost(session.locationId, session.eventId, session.currentPlayerId, session.currentPlayer);
       console.log('CURRENT: ', session.locationId, session.eventId, session.currentPlayerId, session.currentPlayer);
       hideContentsDivs();
-      //currentGet();
-      let $this = $(e.currentTarget);
       $('#players').hide();
       $('#nav-players').parent().removeClass();
       $('#play').show();
@@ -304,9 +302,6 @@ function playerCardPanels(data) {
 
     $(`#dataview-${playerId}`).on('click', e => {
       hideContentsDivs();
-      //currentGet();
-      let $this = $(e.currentTarget);
-      console.log($this);
       $('#players').hide();
       $('#nav-players').parent().removeClass();
       $('#play').show();
