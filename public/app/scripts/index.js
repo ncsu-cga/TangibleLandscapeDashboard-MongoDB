@@ -290,20 +290,15 @@ function playerCardPanels(data) {
     col.appendTo('#all-players');
     // Add click event
     $(`#player-${playerId}`).on('click', e => {
+      $(`#player-${session.currentPlayerId}`).css('background-color', '#4caf50');
+      $(`#player-${session.currentPlayerId}`).html('Play');
       session.currentPlayerId = playerId;
       session.currentPlayer = playerName;
       currentDelete();
       currentPost(session.locationId, session.eventId, session.currentPlayerId, session.currentPlayer);
       console.log('CURRENT: ', session.locationId, session.eventId, session.currentPlayerId, session.currentPlayer);
-      hideContentsDivs();
-      $('#players').hide();
-      $('#nav-players').parent().removeClass();
-      $('#play').show();
-      $('#nav-play').parent().addClass('active');
-      $('#play-icon').attr('src', `${imageDir}/${icon}`);
-      $('#player-card-name').html(playerName);
-      $('#player-card-id').html(playerId);
-      createRadarChart(session.locationId, session.eventId, session.currentPlayerId);
+      $(`#player-${playerId}`).css('background-color', '#ef5350');
+      $(`#player-${playerId}`).html('Playing');
     });
 
     $(`#dataview-${playerId}`).on('click', e => {
