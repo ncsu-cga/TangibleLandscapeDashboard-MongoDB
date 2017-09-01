@@ -41,7 +41,12 @@ const config = {
 }
 
 function mouseEnterSounds() {
-  let audio = $('#sound-select')[0]
+  let audio = $('#sound-select')[0];
+  audio.play();
+}
+
+function mouseClickSounds() {
+  let audio = $('#sound-click')[0];
   audio.play();
 }
 
@@ -264,9 +269,9 @@ function playerCardPanels(data) {
           <div class="content">
             <h3 class="card-title" style="font-weight: bold;">${playerName}</h3>
             <p class="card-content">${playerId}</p>
-            <a id="player-${playerId}" href="#" class="btn btn-round play-btn" style="background-color: #ef5350;">Playing</a>
+            <a id="player-${playerId}" href="#" class="btn btn-round play-btn" style="background-color: #ef5350;" onclick="mouseClickSounds()">Playing</a>
             <button id="dataview-${playerId}" type="button" class="btn btn-info btn-fab btn-fab-mini btn-round"
-            data-toggle="tooltip" data-placement="top" title="View data">
+            data-toggle="tooltip" data-placement="top" title="View data" onclick="mouseClickSounds()">
             <i class="material-icons">visibility</i></button>
           </div>
       </div>`);
@@ -279,9 +284,9 @@ function playerCardPanels(data) {
           <div class="content">
             <h3 class="card-title">${playerName}</h3>
             <p class="card-content">${playerId}</p>
-            <a id="player-${playerId}" href="#" class="btn btn-round play-btn" style="background-color: #4caf50;">Play</a>
+            <a id="player-${playerId}" href="#" class="btn btn-round play-btn" style="background-color: #4caf50;" onclick="mouseClickSounds()">Play</a>
             <button id="dataview-${playerId}" type="button" class="btn btn-info btn-fab btn-fab-mini btn-round"
-            data-toggle="tooltip" data-placement="top" title="View data">
+            data-toggle="tooltip" data-placement="top" title="View data" onclick="mouseClickSounds()">
             <i class="material-icons">visibility</i></button>
           </div>
       </div>`);
