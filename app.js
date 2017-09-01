@@ -2,7 +2,6 @@ require('./config/config');
 
 const express = require('express');
 const bodyParser = require('body-parser');
-const exphbs = require('express-handlebars');
 const path = require('path');
 
 const charts = require('./routes/chart-files');
