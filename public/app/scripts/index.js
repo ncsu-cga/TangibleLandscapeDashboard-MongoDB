@@ -267,7 +267,7 @@ function playerCardPanels(data) {
             <a href="#"><img class="img" src="app/images/animal_icons/${icon}" /></a>
           </div>
           <div class="content">
-            <h3 class="card-title" style="font-weight: bold;">${playerName}</h3>
+            <h3 class="card-title">${playerName}</h3>
             <p class="card-content">${playerId}</p>
             <a id="player-${playerId}" href="#" class="btn btn-round play-btn" style="background-color: #ef5350;" onclick="mouseClickSounds()">Playing</a>
             <button id="dataview-${playerId}" type="button" class="btn btn-info btn-fab btn-fab-mini btn-round"
