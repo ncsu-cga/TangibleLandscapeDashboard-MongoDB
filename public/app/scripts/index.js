@@ -21,8 +21,6 @@ const config = {
   margin: { top: 80, right: 200, bottom: 80, left: 300 },
   heightDiv: '.content', // Div element that determin height of SVG
   chart: 'bl-charts',
-  barDefault: 'Number of Dead Oaks',
-  lineDefault: 'Money Spent',
   yLabelPad: 20,
   topPad: 15,
   legendRectSize: 15,
@@ -205,7 +203,7 @@ function showData() {
     let data = JSON.parse(res);
     setBarChartDropdowns(data);
     const Chart = new BarLineChart(config, data);
-    Chart.drawCharts(config.barDefault, config.lineDefault);
+    Chart.drawCharts(data[0].axis, data[1].axis);
     $('.dropdown-menu').on('click', e => {
       let barOrLine = e.currentTarget.id.split('-')[1]; // 'ul-bar' or 'ul-line'
       let axis = {
@@ -223,8 +221,8 @@ function setBarChartDropdowns(data) {
   let axes = data.map(d => { return d.axis; })
   dropdownList('#ul-bar', axes);
   dropdownList('#ul-line', axes);
-  $('#barchart-dropdown').html(`<i class="material-icons">insert_chart</i>${config.barDefault}<b class="caret"></b>`);
-  $('#linechart-dropdown').html(`<i class="material-icons">show_chart</i>${config.lineDefault}<b class="caret"></b>`);
+  $('#barchart-dropdown').html(`<i class="material-icons">insert_chart</i>${data[0].axis}<b class="caret"></b>`);
+  $('#linechart-dropdown').html(`<i class="material-icons">show_chart</i>${data[1].axis}<b class="caret"></b>`);
 }
 
 function dropdownList(divEle, data) {
