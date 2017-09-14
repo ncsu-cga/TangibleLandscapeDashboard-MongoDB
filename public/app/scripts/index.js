@@ -196,6 +196,8 @@ function clearElements() {
   $('#all-players').empty();
   $('#player-radar').empty();
   $('#player-stats').empty();
+  $('#ul-bar').empty();
+  $('#ul-line').empty();
   //$('#radar-player-card').empty();
 }
 
@@ -206,6 +208,7 @@ function showData() {
     setBarChartDropdowns(data);
     if (Chart){
       Chart = null;
+
     }
     Chart = new BarLineChart(config, data);
     Chart.drawCharts(data[0].axis, data[1].axis);
