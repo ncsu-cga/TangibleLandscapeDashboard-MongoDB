@@ -208,7 +208,6 @@ function showData() {
     setBarChartDropdowns(data);
     if (Chart){
       Chart = null;
-
     }
     Chart = new BarLineChart(config, data);
     Chart.drawCharts(data[0].axis, data[1].axis);
