@@ -108,6 +108,7 @@ class BarLineChart {
         // Deep copy the data
         chartsData.bar = $.extend(true, [], this.rowData.find( d => d.axis === y1Label));
         chartsData.line = $.extend(true, [], this.rowData.find( d => d.axis === y2Label));
+        console.log(chartsData);
         if (chartsData.bar.values.length != chartsData.line.values.length){
             alert('Data length incorrect!!');
         }

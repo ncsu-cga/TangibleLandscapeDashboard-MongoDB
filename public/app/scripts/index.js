@@ -38,6 +38,8 @@ const config = {
   }
 }
 
+var Chart;
+
 function mouseEnterSounds() {
   let audio = $('#sound-select')[0];
   audio.play();
@@ -202,7 +204,10 @@ function showData() {
   getBarChartDataFile(session.locationId, session.eventId).then(res => {
     let data = JSON.parse(res);
     setBarChartDropdowns(data);
-    const Chart = new BarLineChart(config, data);
+    if (Chart){
+      Chart = null;
+    }
+    Chart = new BarLineChart(config, data);
     Chart.drawCharts(data[0].axis, data[1].axis);
     $('.dropdown-menu').on('click', e => {
       let barOrLine = e.currentTarget.id.split('-')[1]; // 'ul-bar' or 'ul-line'
