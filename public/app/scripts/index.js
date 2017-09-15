@@ -1,6 +1,7 @@
 'use strict';
 
 $(document).ready(() => {
+
 });
 
 const apiUrl = 'http://localhost:3000';
