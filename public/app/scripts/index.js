@@ -55,7 +55,8 @@ $('[data-toggle="tooltip"]').tooltip();
 
 $('#sonoma-ca').on('click', e => {
   let $this = $(e.currentTarget);
-  session.location = $this.attr('value');
+  session.locationId = 1;
+  session.locationName = $this.attr('value');
 });
 
 $('#event-save').on('click', () => {
