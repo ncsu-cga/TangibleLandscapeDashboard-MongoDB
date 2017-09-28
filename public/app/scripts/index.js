@@ -13,7 +13,8 @@ const session = {
   eventName: null,
   players: null,
   currentPlayer: null,
-  currentPlayerId: null
+  currentPlayerId: null,
+  icon: null
 }
 
 // Bar chart
@@ -148,6 +149,19 @@ $('.nav a').click(e => {
     case '#players':
       showPlayers();
       break;
+    case '#play':
+      if (session.currentPlayer) {
+        hideContentsDivs();
+        $('#players').hide();
+        $('#nav-players').parent().removeClass();
+        $('#play').show();
+        $('#nav-play').parent().addClass('active');
+        $('#play-icon').attr('src', `${imageDir}/${session.icon}`);
+        $('#player-card-name').html(session.currentPlayer);
+        $('#player-card-id').html('');
+        createRadarChart(session.locationId, session.eventId, session.currentPlayerId);
+      }
+      break;
     case '#data':
       showData();
       break;
@@ -276,7 +290,7 @@ function playerCardPanels(data) {
           </div>
           <div class="content">
             <h3 class="card-title">${playerName}</h3>
-            <p class="card-content">${playerId}</p>
+            <p class="card-content"></p>
             <a id="player-${playerId}" href="#" class="btn btn-round play-btn" style="background-color: #ef5350;" onclick="mouseClickSounds()">Playing</a>
             <button id="dataview-${playerId}" type="button" class="btn btn-info btn-fab btn-fab-mini btn-round"
             data-toggle="tooltip" data-placement="top" title="View data" onclick="mouseClickSounds()">
@@ -291,7 +305,7 @@ function playerCardPanels(data) {
           </div>
           <div class="content">
             <h3 class="card-title">${playerName}</h3>
-            <p class="card-content">${playerId}</p>
+            <p class="card-content"></p>
             <a id="player-${playerId}" href="#" class="btn btn-round play-btn" style="background-color: #4caf50;" onclick="mouseClickSounds()">Play</a>
             <button id="dataview-${playerId}" type="button" class="btn btn-info btn-fab btn-fab-mini btn-round"
             data-toggle="tooltip" data-placement="top" title="View data" onclick="mouseClickSounds()">
@@ -307,6 +321,7 @@ function playerCardPanels(data) {
       $(`#player-${session.currentPlayerId}`).html('Play');
       session.currentPlayerId = playerId;
       session.currentPlayer = playerName;
+      session.icon = icon;
       currentDelete();
       currentPost(session.locationId, session.eventId, session.currentPlayerId, session.currentPlayer);
       console.log('CURRENT: ', session.locationId, session.eventId, session.currentPlayerId, session.currentPlayer);
@@ -322,7 +337,7 @@ function playerCardPanels(data) {
       $('#nav-play').parent().addClass('active');
       $('#play-icon').attr('src', `${imageDir}/${icon}`);
       $('#player-card-name').html(playerName);
-      $('#player-card-id').html(playerId);
+      $('#player-card-id').html('');
       createRadarChart(session.locationId, session.eventId, playerId);
     });
   }
