@@ -348,7 +348,7 @@ function createRadarChart(locationId, eventId, playerId) {
   const margin = { top: 100, right: 50, bottom: 100, left: 50 },
     width = $('#player-radar').width() - margin.left - margin.right,
     height = width - margin.top - margin.bottom - 20,
-    color = d3.scale.ordinal().range(["#EDC951", "#CC333F", "#00A0B0", "#9F7EBD"]),
+    //color = d3.scale.ordinal().range(["#EDC951", "#CC333F", "#00A0B0", "#9F7EBD"]),
     radarChartOptions = {
       w: width,
       h: height,
@@ -356,34 +356,53 @@ function createRadarChart(locationId, eventId, playerId) {
       maxValue: 10,
       levels: 10,
       roundStrokes: true,
-      color: color
+      //color: color
     };
   let radarCtData = getRadarChartDataFile(locationId, eventId, playerId);
   let dataObj = null;
   let d = []; //[[{"axis": "text", "value": 5},... ], [{"axis": "text", "value": 2},...]]
+  let legend = [];
   radarCtData.then(radarData => {
     if (typeof radarData === 'string') {
       dataObj = JSON.parse(radarData);
+      dataObj.map((rData, i) => {
+        console.log(rData);
+        if (rData.baseline) {
+          legend[i] = 'No treatment'
+        } else {
+          legend[i] = rData.attempt;
+        }
+        d[i] = rData.data;
+      });
+      RadarChart('#player-radar', d, legend, radarChartOptions); // RadarChart.js call
+      tableVerticalHeader('#player-table', dataObj);
+    } 
+    // else {
+    //   let baseline = getRadarBaselineFile(locationId);
+    //   baseline.then(base => {
+    //     dataObj = JSON.parse(base);
+    //     dataObj.map((rData, i) => {
+    //       d[i] = rData.data;
+    //     });
+    //     RadarChart('#player-radar', d, radarChartOptions); // RadarChart.js call
+    //     tableVerticalHeader('#player-table', dataObj);
+    //   }).fail(err => {
+    //     alert('Error in finding a radar baseline file.', err);
+    //   });
+    // }
+  }).fail(err => {
+    //alert('Error in finding a radar chart file.', err);
+    let baseline = getRadarBaselineFile(locationId);
+    baseline.then(base => {
+      dataObj = JSON.parse(base);
       dataObj.map((rData, i) => {
         d[i] = rData.data;
       });
       RadarChart('#player-radar', d, radarChartOptions); // RadarChart.js call
       tableVerticalHeader('#player-table', dataObj);
-    } else {
-      let baseline = getRadarBaselineFile(locationId);
-      baseline.then(base => {
-        dataObj = JSON.parse(base);
-        dataObj.map((rData, i) => {
-          d[i] = rData.data;
-        });
-        RadarChart('#player-radar', d, radarChartOptions); // RadarChart.js call
-        tableVerticalHeader('#player-table', dataObj);
-      }).fail(err => {
-        alert('Error in finding a radar baseline file.', err);
-      });
-    }
-  }).fail(err => {
-    alert('Error in finding a radar chart file.', err);
+    }).fail(err => {
+      alert('Error in finding a radar baseline file.', err);
+    });
   });
 }
 
@@ -396,7 +415,7 @@ function tableVerticalHeader(ele, tdata) {
   tdata.map((d, i) => {
     let tableRow = [];
     if (d.baseline) {
-      tableRow.push({ column: '#', value: 'Baseline' });
+      tableRow.push({ column: '#', value: 'No treatment' });
       d.tableRows.map(b => {
         header.push(b.column);
       })

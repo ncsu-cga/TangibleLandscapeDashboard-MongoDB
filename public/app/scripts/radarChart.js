@@ -5,7 +5,7 @@
 /////////// Inspired by the code of alangrafu ///////////
 /////////////////////////////////////////////////////////
 	
-function RadarChart(id, data, options) {
+function RadarChart(id, data, legendTitle, options) {
 	var cfg = {
 	 w: 600,				//Width of the circle
 	 h: 600,				//Height of the circle
@@ -19,7 +19,7 @@ function RadarChart(id, data, options) {
 	 opacityCircles: 0.1, 	//The opacity of the circles of each blob
 	 strokeWidth: 2, 		//The width of the stroke around each blob
 	 roundStrokes: false,	//If true the area and stroke will follow a round path (cardinal-closed)
-	 color: d3.scale.category10(),	//Color function
+	 color: d3.scale.category20(),	//Color function
 	 legRect: 15,
 	 legSpacing: 15
 	};
@@ -30,6 +30,7 @@ function RadarChart(id, data, options) {
 		if('undefined' !== typeof options[i]){ cfg[i] = options[i]; }
 	  }//for i
 	}//if
+
 	
 	//If the supplied maxValue is smaller than the actual one, replace by the max in the data
 	// var maxValue = Math.max(cfg.maxValue, d3.max(data, function(i){
@@ -260,7 +261,7 @@ function RadarChart(id, data, options) {
 	/////////////////////////////////////////////////////////
 	///////////////////////// Legend ////////////////////////
 	/////////////////////////////////////////////////////////
-	cfg.color.domain(['Baseline', 'First', 'Second', 'Third']);
+	cfg.color.domain(legendTitle);
     var leg = svg.append('g')
         .attr('transform', 'translate(' + 0 + ',' + 0 + ')')
 		.attr('class', 'legend');
