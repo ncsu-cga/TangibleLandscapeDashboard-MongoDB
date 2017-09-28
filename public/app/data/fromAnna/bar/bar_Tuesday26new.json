@@ -1,0 +1,252 @@
+[
+    {
+        "values": [
+            {
+                "playerName": "Baseline", 
+                "attempt": "", 
+                "value": 1426872.0
+            }, 
+            {
+                "playerName": "Anna", 
+                "attempt": 1, 
+                "value": 228789.0
+            }, 
+            {
+                "playerName": "Anna", 
+                "attempt": 2, 
+                "value": 228789.0
+            }, 
+            {
+                "playerName": "Monica", 
+                "attempt": 1, 
+                "value": 228789.0
+            }, 
+            {
+                "playerName": "Monica", 
+                "attempt": 2, 
+                "value": 228789.0
+            }, 
+            {
+                "playerName": "Monica", 
+                "attempt": 3, 
+                "value": 228789.0
+            }, 
+            {
+                "playerName": "Monica", 
+                "attempt": 4, 
+                "value": 228789.0
+            }
+        ], 
+        "options": false, 
+        "axis": "Number of Dead Tanoaks"
+    }, 
+    {
+        "values": [
+            {
+                "playerName": "Baseline", 
+                "attempt": "", 
+                "value": 0.09714936028522397
+            }, 
+            {
+                "playerName": "Anna", 
+                "attempt": 1, 
+                "value": 0.015577224159066901
+            }, 
+            {
+                "playerName": "Anna", 
+                "attempt": 2, 
+                "value": 0.015577224159066901
+            }, 
+            {
+                "playerName": "Monica", 
+                "attempt": 1, 
+                "value": 0.015577224159066901
+            }, 
+            {
+                "playerName": "Monica", 
+                "attempt": 2, 
+                "value": 0.015577224159066901
+            }, 
+            {
+                "playerName": "Monica", 
+                "attempt": 3, 
+                "value": 0.015577224159066901
+            }, 
+            {
+                "playerName": "Monica", 
+                "attempt": 4, 
+                "value": 0.015577224159066901
+            }
+        ], 
+        "options": false, 
+        "axis": "Percentage of Dead Tanoaks"
+    }, 
+    {
+        "values": [
+            {
+                "playerName": "Baseline", 
+                "attempt": "", 
+                "value": 7327.0
+            }, 
+            {
+                "playerName": "Anna", 
+                "attempt": 1, 
+                "value": 3395.0
+            }, 
+            {
+                "playerName": "Anna", 
+                "attempt": 2, 
+                "value": 3395.0
+            }, 
+            {
+                "playerName": "Monica", 
+                "attempt": 1, 
+                "value": 3395.0
+            }, 
+            {
+                "playerName": "Monica", 
+                "attempt": 2, 
+                "value": 3395.0
+            }, 
+            {
+                "playerName": "Monica", 
+                "attempt": 3, 
+                "value": 3395.0
+            }, 
+            {
+                "playerName": "Monica", 
+                "attempt": 4, 
+                "value": 3395.0
+            }
+        ], 
+        "options": false, 
+        "axis": "Infected Area (ha)"
+    }, 
+    {
+        "values": [
+            {
+                "playerName": "Baseline", 
+                "attempt": "", 
+                "value": 0
+            }, 
+            {
+                "playerName": "Anna", 
+                "attempt": 1, 
+                "value": 3977113.9585364624
+            }, 
+            {
+                "playerName": "Anna", 
+                "attempt": 2, 
+                "value": 3977113.9585364624
+            }, 
+            {
+                "playerName": "Monica", 
+                "attempt": 1, 
+                "value": 3977113.9585364624
+            }, 
+            {
+                "playerName": "Monica", 
+                "attempt": 2, 
+                "value": 3977113.9585364624
+            }, 
+            {
+                "playerName": "Monica", 
+                "attempt": 3, 
+                "value": 3977113.9585364624
+            }, 
+            {
+                "playerName": "Monica", 
+                "attempt": 4, 
+                "value": 3977113.9585364624
+            }
+        ], 
+        "options": {
+            "money": true
+        }, 
+        "axis": "Money Spent"
+    }, 
+    {
+        "values": [
+            {
+                "playerName": "Baseline", 
+                "attempt": "", 
+                "value": 0
+            }, 
+            {
+                "playerName": "Anna", 
+                "attempt": 1, 
+                "value": 3207349.9665616634
+            }, 
+            {
+                "playerName": "Anna", 
+                "attempt": 2, 
+                "value": 3207349.9665616634
+            }, 
+            {
+                "playerName": "Monica", 
+                "attempt": 1, 
+                "value": 3207349.9665616634
+            }, 
+            {
+                "playerName": "Monica", 
+                "attempt": 2, 
+                "value": 3207349.9665616634
+            }, 
+            {
+                "playerName": "Monica", 
+                "attempt": 3, 
+                "value": 3207349.9665616634
+            }, 
+            {
+                "playerName": "Monica", 
+                "attempt": 4, 
+                "value": 3207349.9665616634
+            }
+        ], 
+        "options": false, 
+        "axis": "Area Treated (ha)"
+    }, 
+    {
+        "values": [
+            {
+                "playerName": "Baseline", 
+                "attempt": "", 
+                "value": 0
+            }, 
+            {
+                "playerName": "Anna", 
+                "attempt": 1, 
+                "value": 3.3195646366207203
+            }, 
+            {
+                "playerName": "Anna", 
+                "attempt": 2, 
+                "value": 3.3195646366207203
+            }, 
+            {
+                "playerName": "Monica", 
+                "attempt": 1, 
+                "value": 3.3195646366207203
+            }, 
+            {
+                "playerName": "Monica", 
+                "attempt": 2, 
+                "value": 3.3195646366207203
+            }, 
+            {
+                "playerName": "Monica", 
+                "attempt": 3, 
+                "value": 3.3195646366207203
+            }, 
+            {
+                "playerName": "Monica", 
+                "attempt": 4, 
+                "value": 3.3195646366207203
+            }
+        ], 
+        "options": {
+            "negative": true
+        }, 
+        "axis": "Price per Saved Tanoak"
+    }
+]

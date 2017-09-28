@@ -1,0 +1,282 @@
+[
+    {
+        "data": [
+            {
+                "value": 10, 
+                "axis": "Number of Dead Tanoaks"
+            }, 
+            {
+                "value": 10, 
+                "axis": "Percentage of Dead Tanoaks"
+            }, 
+            {
+                "value": 10, 
+                "axis": "Infected Area (ha)"
+            }, 
+            {
+                "value": 0, 
+                "axis": "Money Spent"
+            }, 
+            {
+                "value": 0, 
+                "axis": "Area Treated"
+            }, 
+            {
+                "value": 0, 
+                "axis": "Price per Saved Tanoak"
+            }
+        ], 
+        "tableRows": [
+            {
+                "column": "Number of Dead Tanoaks", 
+                "value": "142687K"
+            }, 
+            {
+                "column": "Percentage of Dead Tanoaks", 
+                "value": 9.7
+            }, 
+            {
+                "column": "Infected Area (ha)", 
+                "value": 7327.0
+            }, 
+            {
+                "column": "Money Spent", 
+                "value": "0"
+            }, 
+            {
+                "column": "Area Treated (ha)", 
+                "value": 0.0
+            }, 
+            {
+                "column": "Price per Saved Tanoak", 
+                "value": 0.0
+            }
+        ], 
+        "attempt": null, 
+        "baseline": true
+    }, 
+    {
+        "data": [
+            {
+                "value": 2.0, 
+                "axis": "Number of Dead Tanoaks"
+            }, 
+            {
+                "value": 2.0, 
+                "axis": "Percentage of Dead Tanoaks"
+            }, 
+            {
+                "value": 5.0, 
+                "axis": "Infected Area (ha)"
+            }, 
+            {
+                "value": 4.0, 
+                "axis": "Money Spent"
+            }, 
+            {
+                "value": 4.0, 
+                "axis": "Area Treated"
+            }, 
+            {
+                "value": 7.0, 
+                "axis": "Price per Saved Tanoak"
+            }
+        ], 
+        "tableRows": [
+            {
+                "column": "Number of Dead Tanoaks", 
+                "value": "22878K"
+            }, 
+            {
+                "column": "Percentage of Dead Tanoaks", 
+                "value": 1.6
+            }, 
+            {
+                "column": "Infected Area (ha)", 
+                "value": 3395.0
+            }, 
+            {
+                "column": "Money Spent", 
+                "value": "3977K"
+            }, 
+            {
+                "column": "Area Treated (ha)", 
+                "value": 320.7
+            }, 
+            {
+                "column": "Price per Saved Tanoak", 
+                "value": 3.3
+            }
+        ], 
+        "attempt": "1", 
+        "baseline": false
+    }, 
+    {
+        "data": [
+            {
+                "value": 2.0, 
+                "axis": "Number of Dead Tanoaks"
+            }, 
+            {
+                "value": 2.0, 
+                "axis": "Percentage of Dead Tanoaks"
+            }, 
+            {
+                "value": 5.0, 
+                "axis": "Infected Area (ha)"
+            }, 
+            {
+                "value": 4.0, 
+                "axis": "Money Spent"
+            }, 
+            {
+                "value": 4.0, 
+                "axis": "Area Treated"
+            }, 
+            {
+                "value": 7.0, 
+                "axis": "Price per Saved Tanoak"
+            }
+        ], 
+        "tableRows": [
+            {
+                "column": "Number of Dead Tanoaks", 
+                "value": "22878K"
+            }, 
+            {
+                "column": "Percentage of Dead Tanoaks", 
+                "value": 1.6
+            }, 
+            {
+                "column": "Infected Area (ha)", 
+                "value": 3395.0
+            }, 
+            {
+                "column": "Money Spent", 
+                "value": "3977K"
+            }, 
+            {
+                "column": "Area Treated (ha)", 
+                "value": 320.7
+            }, 
+            {
+                "column": "Price per Saved Tanoak", 
+                "value": 3.3
+            }
+        ], 
+        "attempt": "2", 
+        "baseline": false
+    }, 
+    {
+        "data": [
+            {
+                "value": 2.0, 
+                "axis": "Number of Dead Tanoaks"
+            }, 
+            {
+                "value": 2.0, 
+                "axis": "Percentage of Dead Tanoaks"
+            }, 
+            {
+                "value": 5.0, 
+                "axis": "Infected Area (ha)"
+            }, 
+            {
+                "value": 4.0, 
+                "axis": "Money Spent"
+            }, 
+            {
+                "value": 4.0, 
+                "axis": "Area Treated"
+            }, 
+            {
+                "value": 7.0, 
+                "axis": "Price per Saved Tanoak"
+            }
+        ], 
+        "tableRows": [
+            {
+                "column": "Number of Dead Tanoaks", 
+                "value": "22878K"
+            }, 
+            {
+                "column": "Percentage of Dead Tanoaks", 
+                "value": 1.6
+            }, 
+            {
+                "column": "Infected Area (ha)", 
+                "value": 3395.0
+            }, 
+            {
+                "column": "Money Spent", 
+                "value": "3977K"
+            }, 
+            {
+                "column": "Area Treated (ha)", 
+                "value": 320.7
+            }, 
+            {
+                "column": "Price per Saved Tanoak", 
+                "value": 3.3
+            }
+        ], 
+        "attempt": "3", 
+        "baseline": false
+    }, 
+    {
+        "data": [
+            {
+                "value": 2.0, 
+                "axis": "Number of Dead Tanoaks"
+            }, 
+            {
+                "value": 2.0, 
+                "axis": "Percentage of Dead Tanoaks"
+            }, 
+            {
+                "value": 5.0, 
+                "axis": "Infected Area (ha)"
+            }, 
+            {
+                "value": 4.0, 
+                "axis": "Money Spent"
+            }, 
+            {
+                "value": 4.0, 
+                "axis": "Area Treated"
+            }, 
+            {
+                "value": 7.0, 
+                "axis": "Price per Saved Tanoak"
+            }
+        ], 
+        "tableRows": [
+            {
+                "column": "Number of Dead Tanoaks", 
+                "value": "22878K"
+            }, 
+            {
+                "column": "Percentage of Dead Tanoaks", 
+                "value": 1.6
+            }, 
+            {
+                "column": "Infected Area (ha)", 
+                "value": 3395.0
+            }, 
+            {
+                "column": "Money Spent", 
+                "value": "3977K"
+            }, 
+            {
+                "column": "Area Treated (ha)", 
+                "value": 320.7
+            }, 
+            {
+                "column": "Price per Saved Tanoak", 
+                "value": 3.3
+            }
+        ], 
+        "attempt": "4", 
+        "baseline": false
+    }
+]

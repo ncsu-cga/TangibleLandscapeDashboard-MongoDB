@@ -1,0 +1,72 @@
+[
+    {
+        "values": [
+            {
+                "playerName": "Baseline", 
+                "attempt": "", 
+                "value": 1426872.0
+            }
+        ], 
+        "options": false, 
+        "axis": "Number of Dead Tanoaks"
+    }, 
+    {
+        "values": [
+            {
+                "playerName": "Baseline", 
+                "attempt": "", 
+                "value": 0.09714936028522397
+            }
+        ], 
+        "options": false, 
+        "axis": "Percentage of Dead Tanoaks"
+    }, 
+    {
+        "values": [
+            {
+                "playerName": "Baseline", 
+                "attempt": "", 
+                "value": 7327.0
+            }
+        ], 
+        "options": false, 
+        "axis": "Infected Area (ha)"
+    }, 
+    {
+        "values": [
+            {
+                "playerName": "Baseline", 
+                "attempt": "", 
+                "value": 0
+            }
+        ], 
+        "options": {
+            "money": true
+        }, 
+        "axis": "Money Spent"
+    }, 
+    {
+        "values": [
+            {
+                "playerName": "Baseline", 
+                "attempt": "", 
+                "value": 0
+            }
+        ], 
+        "options": false, 
+        "axis": "Area Treated (ha)"
+    }, 
+    {
+        "values": [
+            {
+                "playerName": "Baseline", 
+                "attempt": "", 
+                "value": 0
+            }
+        ], 
+        "options": {
+            "negative": true
+        }, 
+        "axis": "Price per Saved Tanoak"
+    }
+]

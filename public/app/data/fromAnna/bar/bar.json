@@ -1,0 +1,132 @@
+[
+    {
+        "values": [
+            {
+                "playerName": "Baseline", 
+                "attempt": "", 
+                "value": 5330893.0
+            }, 
+            {
+                "playerName": "Anna", 
+                "attempt": 1, 
+                "value": 41830.0
+            }, 
+            {
+                "playerName": "Vasek", 
+                "attempt": 1, 
+                "value": 41830.0
+            }
+        ], 
+        "options": false, 
+        "axis": "Number of Dead Tanoaks"
+    }, 
+    {
+        "values": [
+            {
+                "playerName": "Baseline", 
+                "attempt": "", 
+                "value": 1.0
+            }, 
+            {
+                "playerName": "Anna", 
+                "attempt": 1, 
+                "value": 0.007846715362698145
+            }, 
+            {
+                "playerName": "Vasek", 
+                "attempt": 1, 
+                "value": 0.007846715362698145
+            }
+        ], 
+        "options": false, 
+        "axis": "Percentage of Dead Tanoaks"
+    }, 
+    {
+        "values": [
+            {
+                "playerName": "Baseline", 
+                "attempt": "", 
+                "value": 1235.0
+            }, 
+            {
+                "playerName": "Anna", 
+                "attempt": 1, 
+                "value": 1253.0
+            }, 
+            {
+                "playerName": "Vasek", 
+                "attempt": 1, 
+                "value": 1253.0
+            }
+        ], 
+        "options": false, 
+        "axis": "Infected Area (ha)"
+    }, 
+    {
+        "values": [
+            {
+                "playerName": "Baseline", 
+                "attempt": "", 
+                "value": 0
+            }, 
+            {
+                "playerName": "Anna", 
+                "attempt": 1, 
+                "value": 0
+            }, 
+            {
+                "playerName": "Vasek", 
+                "attempt": 1, 
+                "value": 0
+            }
+        ], 
+        "options": {
+            "money": true
+        }, 
+        "axis": "Money Spent"
+    }, 
+    {
+        "values": [
+            {
+                "playerName": "Baseline", 
+                "attempt": "", 
+                "value": 0
+            }, 
+            {
+                "playerName": "Anna", 
+                "attempt": 1, 
+                "value": 0
+            }, 
+            {
+                "playerName": "Vasek", 
+                "attempt": 1, 
+                "value": 0
+            }
+        ], 
+        "options": false, 
+        "axis": "Area Treated (ha)"
+    }, 
+    {
+        "values": [
+            {
+                "playerName": "Baseline", 
+                "attempt": "", 
+                "value": 0
+            }, 
+            {
+                "playerName": "Anna", 
+                "attempt": 1, 
+                "value": 0
+            }, 
+            {
+                "playerName": "Vasek", 
+                "attempt": 1, 
+                "value": 0
+            }
+        ], 
+        "options": {
+            "negative": true
+        }, 
+        "axis": "Price per Saved Tanoak"
+    }
+]
