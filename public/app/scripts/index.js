@@ -124,6 +124,7 @@ $('#player-cancel').on('click', e => {
 
 $('#radar-update').on('click', e => {
   clearElements();
+  mouseClickSounds();
   createRadarChart(session.locationId, session.eventId, session.currentPlayerId);
 });
 
@@ -366,7 +367,6 @@ function createRadarChart(locationId, eventId, playerId) {
     if (typeof radarData === 'string') {
       dataObj = JSON.parse(radarData);
       dataObj.map((rData, i) => {
-        console.log(rData);
         if (rData.baseline) {
           legend[i] = 'No treatment'
         } else {
