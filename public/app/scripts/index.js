@@ -1,9 +1,5 @@
 'use strict';
 
-$(document).ready(() => {
-
-});
-
 const apiUrl = 'http://localhost:3000';
 const imageDir = 'app/images/animal_icons'
 const session = {
@@ -73,7 +69,7 @@ $('#sonama-ca-events').on('click', e => {
 
 $('#select-event').on('click', e => {
   let eventInfo = e.target.text.split(': ');
-  console.log('eventInfo: ', eventInfo);
+  // console.log('eventInfo: ', eventInfo);
   if (session.eventId != eventInfo[0]){
     clearElements();
     //Need anonymous card for play nav
@@ -193,7 +189,6 @@ function showPlayers() {
       return obj.playerId;
     });
   }).then(playerIds => {
-    console.log(playerIds);
     if (playerIds.length != 0) {
       playersByIds(playerIds).then(data => {
         session.players = data.map(obj => {
@@ -325,7 +320,7 @@ function playerCardPanels(data) {
       session.icon = icon;
       currentDelete();
       currentPost(session.locationId, session.eventId, session.currentPlayerId, session.currentPlayer);
-      console.log('CURRENT: ', session.locationId, session.eventId, session.currentPlayerId, session.currentPlayer);
+      //console.log('CURRENT: ', session.locationId, session.eventId, session.currentPlayerId, session.currentPlayer);
       $(`#player-${playerId}`).css('background-color', '#ef5350');
       $(`#player-${playerId}`).html('Playing');
     });
@@ -538,7 +533,6 @@ function savePlay(locationId, eventId, playerId, playerName) {
 }
 
 function playersByIds(ids) {
-  console.log(ids);
   return $.ajax({
     type: 'GET',
     url: `${apiUrl}/player/players`,
