@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const bodyParser = require('body-parser');
 
-const { mongoose } = require('../db/mongoose');
+const {mongoose} = require('../db/mongoose');
 const Player = require('../models/player');
 const Play = require('../models/play');
 const app = express();
@@ -21,16 +21,16 @@ router.post('/', (req, res) => {
         name: req.body.name,
         image: randomImageGeneration()
     });
-    Player.find({}, (err, players) => {
-         if (players.length === 0) {
-            player.resetCount((err, count) => {
-                if (err) {
-                    return err;
-                }
-                return;
-            });
-        }
-    });
+    // Player.find({}, (err, players) => {
+    //      if (players.length === 0) {
+    //         player.resetCount((err, count) => {
+    //             if (err) {
+    //                 return err;
+    //             }
+    //             return;
+    //         });
+    //     }
+    // });
     player.save().then(doc => {
         res.status(200).json(doc);
     }, e => {
@@ -39,13 +39,23 @@ router.post('/', (req, res) => {
 });
 
 
+// Object ID
 router.get('/players', (req, res) => {
-    Player.find(req.query).then(players => {
+    Player.find({_id: {$in: req.query._id}}).then(players => {
         res.json(players);
     }, e => {
         res.status(400).send(e);
     });
 });
+
+// router.get('/players', (req, res) => {
+//     Player.find(req.query).then(players => {
+//         console.log(players);
+//         res.json(players);
+//     }, e => {
+//         res.status(400).send(e);
+//     });
+// });
 
 router.get('/:eventId', (req, res) => {
     Play.find({eventId: req.params.eventId}).then(plays => {

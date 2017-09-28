@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const autoIncrement = require('mongoose-auto-increment');
+//const autoIncrement = require('mongoose-auto-increment');
 // const Event = mongoose.model('Event', {
 //     name: {type: String, required: true, minlength: 1, trim: true},
 //     location: {type: String, required: true, minlength: 1, trim: true}
@@ -15,6 +15,6 @@ const playSchema = new mongoose.Schema({
     playerName: {type: String, required: true, minlength: 1, trim: true}
 });
 
-autoIncrement.initialize(mongoose.connection);
-playSchema.plugin(autoIncrement.plugin, {model: 'Play', startAt: 1, incrementBy: 1});
+//autoIncrement.initialize(mongoose.connection);
+//playSchema.plugin(autoIncrement.plugin, {model: 'Play', startAt: 1, incrementBy: 1});
 module.exports = mongoose.model('Play', playSchema);

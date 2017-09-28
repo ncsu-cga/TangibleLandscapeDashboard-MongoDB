@@ -15,16 +15,16 @@ router.post('/', (req, res) => {
         playerName: req.body.playerName
     });
 
-    Play.find({}, (err, plays) => {
-        if (plays.length === 0) {
-            play.resetCount((err, count) => {
-                if (err) {
-                    return err;
-                }
-                return count;
-            });
-        }
-    });
+    // Play.find({}, (err, plays) => {
+    //     if (plays.length === 0) {
+    //         play.resetCount((err, count) => {
+    //             if (err) {
+    //                 return err;
+    //             }
+    //             return count;
+    //         });
+    //     }
+    // });
     play.save().then(doc => {
         res.status(200).send(doc);
     }, e => {

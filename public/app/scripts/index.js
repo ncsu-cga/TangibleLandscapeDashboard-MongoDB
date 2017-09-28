@@ -178,6 +178,7 @@ function showPlayers() {
       return obj.playerId;
     });
   }).then(playerIds => {
+    console.log(playerIds);
     if (playerIds.length != 0) {
       playersByIds(playerIds).then(data => {
         session.players = data.map(obj => {
@@ -503,6 +504,7 @@ function savePlay(locationId, eventId, playerId, playerName) {
 }
 
 function playersByIds(ids) {
+  console.log(ids);
   return $.ajax({
     type: 'GET',
     url: `${apiUrl}/player/players`,
