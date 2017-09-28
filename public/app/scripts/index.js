@@ -564,7 +564,7 @@ function currentPost(locationId, eventId, playerId, playerName) {
     contentType: 'application/json',
     dataType: 'json',
     success: e => {
-      console.log('data sent', e);
+      //console.log('data sent', e);
     },
     error: err => {
       console.log(err);
@@ -577,7 +577,7 @@ function currentDelete() {
     type: 'DELETE',
     url: `${apiUrl}/current`,
     success: e => {
-      console.log(e);
+      //console.log(e);
     },
     error: err => {
       console.log(err);
