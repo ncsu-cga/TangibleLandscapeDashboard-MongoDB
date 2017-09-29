@@ -300,7 +300,6 @@ class BarLineChart {
                 transform: 'translate(' + [this.config.margin.left+this.config.yLabelPad, this.config.margin.top] + ')'
             })
             .style('fill', d => {
-                console.log(d);
                 if (d.playerName === 'No treatment') {
                     return this.colors['No treatment']; 
                 } 
