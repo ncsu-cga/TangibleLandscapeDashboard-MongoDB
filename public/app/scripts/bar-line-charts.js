@@ -108,7 +108,6 @@ class BarLineChart {
         // Deep copy the data
         chartsData.bar = $.extend(true, [], this.rowData.find( d => d.axis === y1Label));
         chartsData.line = $.extend(true, [], this.rowData.find( d => d.axis === y2Label));
-        console.log(chartsData);
         if (chartsData.bar.values.length != chartsData.line.values.length){
             alert('Data length incorrect!!');
         }
@@ -138,7 +137,6 @@ class BarLineChart {
         let barchartColors = {};
         let count = 0;
         this.rowData[0].values.forEach( (d, i) => {
-            console.log(d.playerName);
             if (d.playerName === 'No treatment'){
                 barchartColors[d.playerName] = this.config.colorPalette.noTreatment;
             } else if (d.playerName != this.rowData[0].values[i-1].playerName){
