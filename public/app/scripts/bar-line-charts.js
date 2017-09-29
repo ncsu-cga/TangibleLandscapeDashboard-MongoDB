@@ -57,8 +57,8 @@ class BarLineChart {
     getPlayers(values) {
         let players = [];
         values.map(d => {
-            if (d.playerName === 'Baseline'){
-                players.push('Baseline');
+            if (d.playerName === 'No treatment'){
+                players.push('No treatment');
             } else {
                 players.push(`${d.playerName} ${d.attempt}`);
             }
@@ -138,8 +138,9 @@ class BarLineChart {
         let barchartColors = {};
         let count = 0;
         this.rowData[0].values.forEach( (d, i) => {
-            if (d.playerName === 'Baseline'){
-                barchartColors[d.playerName] = this.config.colorPalette.baseline;
+            console.log(d.playerName);
+            if (d.playerName === 'No treatment'){
+                barchartColors[d.playerName] = this.config.colorPalette.noTreatment;
             } else if (d.playerName != this.rowData[0].values[i-1].playerName){
                 barchartColors[d.playerName] = this.config.colorPalette.palette[count];
                 count += 1;
@@ -188,7 +189,8 @@ class BarLineChart {
                 'class': 'legend-pointer',
                 'id': d => { 
                     let playerAttem = d.split(' ');
-                    if (playerAttem[0] === 'Baseline'){ return 'Baseline'; } 
+                    //console.log(playerAttem);
+                    if (playerAttem[0] === 'No'){ return 'noTreatment'; } 
                     else { return `${playerAttem[0]}-${playerAttem[1]}`; }
                 },
                 'transform': (d, i) => {
@@ -218,7 +220,12 @@ class BarLineChart {
                 'width': this.config.legendRectSize,
                 'height': this.config.legendRectSize,
             })
-            .style('fill', d => { return this.colors[d.split(' ')[0]]; });
+            .style('fill', d => { 
+                if (d === 'No treatment') {
+                    return this.colors['No treatment'];
+                }
+                return this.colors[d.split(' ')[0]]; 
+            });
 
         legend.append('text')
             .attr({
@@ -227,7 +234,9 @@ class BarLineChart {
                 'y': this.config.legendRectSize
             })
             .append('tspan')
-            .text( d => { return d; });
+            .text( d => {
+                return d; 
+            });
     }
 
     barchart(barData, scaleX, y1Label) {
@@ -282,7 +291,7 @@ class BarLineChart {
             .attr({
                 class: 'bar',
                 x: d => {
-                    if (d.playerName === 'Baseline'){ return scaleX(d.playerName)}
+                    if (d.playerName === 'No treatment'){ return scaleX(d.playerName)}
                     else { return scaleX(`${d.playerName} ${d.attempt}`); }
                 },
                 y: d => { return this.height-this.config.margin.top-this.config.margin.bottom; },
@@ -290,7 +299,13 @@ class BarLineChart {
                 height: 0,
                 transform: 'translate(' + [this.config.margin.left+this.config.yLabelPad, this.config.margin.top] + ')'
             })
-            .style('fill', d => { return this.colors[d.playerName.split(' ')[0]]; })
+            .style('fill', d => {
+                console.log(d);
+                if (d.playerName === 'No treatment') {
+                    return this.colors['No treatment']; 
+                } 
+                return this.colors[d.playerName.split(' ')[0]]; 
+            })
             .on('mouseover', tipY1.show)
             .on('mouseout', tipY1.hide)
             .transition()
@@ -346,7 +361,7 @@ class BarLineChart {
         // Line chart
         let valueline = d3.svg.line()
             .x( d => { 
-                if (d.playerName === 'Baseline'){ return scaleX('Baseline'); }
+                if (d.playerName === 'No treatment'){ return scaleX('No treatment'); }
                 else { return scaleX(`${d.playerName} ${d.attempt}`); }
             })
             .y( d => { return scaleY2(d.value); });
@@ -380,7 +395,7 @@ class BarLineChart {
             .attr({
                 'class': 'circle',
                 'cx': d => { 
-                    if (d.playerName === 'Baseline'){ return scaleX('Baseline'); }
+                    if (d.playerName === 'No treatment'){ return scaleX('No treatment'); }
                     else { return scaleX(`${d.playerName} ${d.attempt}`); }
                 },
                 'cy': d => { return scaleY2(d.value); },

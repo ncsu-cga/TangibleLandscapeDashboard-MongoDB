@@ -23,7 +23,7 @@ const config = {
   topPad: 15,
   legendRectSize: 15,
   colorPalette: {
-    baseline: "rgba(238, 221, 153, .8)",
+    noTreatment: "rgba(238, 221, 153, .8)",
     palette: [
       "rgba(255, 204, 188, 1)",
       "rgba(77, 182, 172, 1)",
