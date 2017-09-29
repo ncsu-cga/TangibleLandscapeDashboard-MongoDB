@@ -358,45 +358,25 @@ function createRadarChart(locationId, eventId, playerId) {
   let dataObj = null;
   let d = []; //[[{"axis": "text", "value": 5},... ], [{"axis": "text", "value": 2},...]]
   let legend = [];
+
   radarCtData.then(radarData => {
+    console.log(radarData);
     if (typeof radarData === 'string') {
       dataObj = JSON.parse(radarData);
-      dataObj.map((rData, i) => {
-        if (rData.baseline) {
-          legend[i] = 'No treatment'
-        } else {
-          legend[i] = rData.attempt;
-        }
-        d[i] = rData.data;
-      });
-      RadarChart('#player-radar', d, legend, radarChartOptions); // RadarChart.js call
+      RadarChart('#player-radar', dataObj, radarChartOptions); // RadarChart.js call
       tableVerticalHeader('#player-table', dataObj);
     } 
-    // else {
-    //   let baseline = getRadarBaselineFile(locationId);
-    //   baseline.then(base => {
-    //     dataObj = JSON.parse(base);
-    //     dataObj.map((rData, i) => {
-    //       d[i] = rData.data;
-    //     });
-    //     RadarChart('#player-radar', d, radarChartOptions); // RadarChart.js call
-    //     tableVerticalHeader('#player-table', dataObj);
-    //   }).fail(err => {
-    //     alert('Error in finding a radar baseline file.', err);
-    //   });
-    // }
   }).fail(err => {
-    //alert('Error in finding a radar chart file.', err);
     let baseline = getRadarBaselineFile(locationId);
     baseline.then(base => {
       dataObj = JSON.parse(base);
-      dataObj.map((rData, i) => {
-        d[i] = rData.data;
+        dataObj.map((rData, i) => {
+          d[i] = rData.data;
       });
-      RadarChart('#player-radar', d, radarChartOptions); // RadarChart.js call
+      RadarChart('#player-radar', dataObj, radarChartOptions); // RadarChart.js call
       tableVerticalHeader('#player-table', dataObj);
     }).fail(err => {
-      alert('Error in finding a radar baseline file.', err);
+      alert('Error in finding a radar baseline file or the player data.', err);
     });
   });
 }
