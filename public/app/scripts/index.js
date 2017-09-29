@@ -217,23 +217,13 @@ function clearElements() {
 function showData() {
   clearElements();
   getBarChartDataFile(session.locationId, session.eventId).then(res => {
-    let data = JSON.parse(res);
-    setBarChartDropdowns(data);
-    if (Chart){
-      Chart = null;
-    }
-    Chart = new BarLineChart(config, data);
-    Chart.drawCharts(data[0].axis, data[1].axis);
-    $('.dropdown-menu').on('click', e => {
-      let barOrLine = e.currentTarget.id.split('-')[1]; // 'ul-bar' or 'ul-line'
-      let axis = {
-        barchart: $('#barchart-dropdown').contents()[1].textContent,
-        linechart: $('#linechart-dropdown').contents()[1].textContent
-      }; // Get only text content
-      if (barOrLine === 'bar' || barOrLine === 'line') {
-        Chart.drawCharts(axis.barchart, axis.linechart);
-      }
-    });
+    setBarchart(res);
+  }).fail(err => {
+    getBarchartBaselineFile(session.locationId).then(res => {
+      setBarchart(res);
+    }).fail(err => {
+      alert('No baseline data or play data.');
+    })
   });
 }
 
@@ -360,7 +350,6 @@ function createRadarChart(locationId, eventId, playerId) {
   let legend = [];
 
   radarCtData.then(radarData => {
-    console.log(radarData);
     if (typeof radarData === 'string') {
       dataObj = JSON.parse(radarData);
       RadarChart('#player-radar', dataObj, radarChartOptions); // RadarChart.js call
@@ -565,6 +554,27 @@ function currentDelete() {
   });
 }
 
+
+function setBarchart(res) {
+  let data = JSON.parse(res);
+  setBarChartDropdowns(data);
+  if (Chart){
+    Chart = null;
+  }
+  Chart = new BarLineChart(config, data);
+  Chart.drawCharts(data[0].axis, data[1].axis);
+  $('.dropdown-menu').on('click', e => {
+    let barOrLine = e.currentTarget.id.split('-')[1]; // 'ul-bar' or 'ul-line'
+    let axis = {
+      barchart: $('#barchart-dropdown').contents()[1].textContent,
+      linechart: $('#linechart-dropdown').contents()[1].textContent
+    }; // Get only text content
+    if (barOrLine === 'bar' || barOrLine === 'line') {
+      Chart.drawCharts(axis.barchart, axis.linechart);
+    }
+  });
+}
+
 // function currentGet() {
 //   return $.ajax({
 //     type: 'GET',
@@ -595,7 +605,8 @@ function getBarChartDataFile(locationId, eventId) {
       return d;
     },
     error: err => {
-      return alert('No data found.');
+      console.log('No data found. Look for baseline data.')
+      //return alert('No data found.');
     }
   });
 }
@@ -604,6 +615,14 @@ function getRadarBaselineFile(locationId) {
   return $.ajax({
     type: 'GET',
     url: `${apiUrl}/charts/radarBaseline`,
+    data: { locationId }
+  });
+}
+
+function getBarchartBaselineFile(locationId) {
+  return $.ajax({
+    type: 'GET',
+    url: `${apiUrl}/charts/barBaseline`,
     data: { locationId }
   });
 }

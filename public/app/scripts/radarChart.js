@@ -161,7 +161,6 @@ function RadarChart(id, chartData, options) {
 	if (cfg.roundStrokes) {
 		radarLine.interpolate("cardinal-closed");
 	}
-	console.log(data);
 
 	//Create a wrapper for the blobs	
 	var blobWrapper = g.selectAll(".radarWrapper")
@@ -171,11 +170,9 @@ function RadarChart(id, chartData, options) {
 		.attr("id", function(d, i) { 
 			let attem = chartData[i].attempt;
 			let base = chartData[i].baseline;
-			console.log(attem);
 			if (base) {
 				return "radar-wrapper-baseline"
 			} else {
-				console.log("radar-wrapper-", attem);
 				return "radar-wrapper-" + attem;
 			}
 		})
