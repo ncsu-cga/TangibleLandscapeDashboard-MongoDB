@@ -7,8 +7,8 @@
 
 function RadarChart(id, chartData, options) {
 	var cfg = {
-		w: 600,				//Width of the circle
-		h: 600,				//Height of the circle
+		w: $('#player-radar').width(),				//Width of the circle
+		h: $('#player-radar').width(),				//Height of the circle
 		margin: { top: 20, right: 20, bottom: 20, left: 20 }, //The margins of the SVG
 		levels: 10,				//How many levels or inner circles should there be drawn
 		maxValue: 10, 			//What is the value that the biggest circle will represent
