@@ -13,6 +13,10 @@ const session = {
   icon: null
 }
 
+const view = {
+  playerId: null
+};
+
 // Bar chart
 const config = {
   divEle: '#bl-custom-chart',
@@ -119,9 +123,12 @@ $('#player-cancel').on('click', e => {
 // });
 
 $('#radar-update').on('click', e => {
+  console.log
   clearElements();
   mouseClickSounds();
-  createRadarChart(session.locationId, session.eventId, session.currentPlayerId);
+  if (view.playerId) {
+    createRadarChart(session.locationId, session.eventId, view.playerId);
+  } 
 });
 
 
@@ -316,6 +323,7 @@ function playerCardPanels(data) {
     });
 
     $(`#dataview-${playerId}`).on('click', e => {
+      view.playerId = playerId;
       hideContentsDivs();
       $('#players').hide();
       $('#nav-players').parent().removeClass();
