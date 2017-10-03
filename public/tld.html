@@ -184,6 +184,20 @@
         </div>
       </div>
       <div class="main-panel">
+        <!-- <nav class="navbar navbar-transparent navbar-absolute">
+          <div class="container-fluid">
+              <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href="#"></a>
+                </div>
+
+          </div>
+        </nav> -->
         <div class="content" style="margin-top: 30px">
           <div class="container-fluid">
             <div id="players" style="display: none;">
@@ -228,8 +242,8 @@
 
                 <!-- Other [right colum] -->
                 <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-                  <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                  <!-- <div class="row"> -->
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                       <div id="radar-player-card" class="card card-profile">
                         <div class="card-avatar">
                           <a href="#">
@@ -245,7 +259,7 @@
                         </div>
                       </div>
                     </div>
-                    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                       <!-- <div class="card card-stats">
                                             <div class="card-header" data-background-color="orange">
                                                 <i class="material-icons">content_copy</i>
@@ -261,7 +275,7 @@
                                             </div>
                                         </div> -->
                     </div>
-                  </div>
+                  <!-- </div> -->
                   <!-- ./row [Right two cards] -->
 
                   <div class="row">
@@ -311,126 +325,126 @@
                 </div>
                 <!-- row  -->
               </div>
-              </div>
             </div>
-            <!-- ./container-fluid -->
           </div>
-          <!-- ./container -->
+          <!-- ./container-fluid -->
+        </div>
+        <!-- ./container -->
         </div>
         <!-- ./main-panel -->
       </div>
       <!-- ./wrapper -->
     </div>
   </div>
-    <!-- ./tld -->
+  <!-- ./tld -->
 
-    <!-- Modal - Create Event -->
-    <div class="modal fade" id="create-event" tabindex="-1" role="dialog" aria-labelledby="myModalLabelOne" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <!--<h4 class="modal-title" id="myModalLabel">Modal title</h4>-->
-          </div>
-          <div class="modal-body">
-            <div class="card">
-              <div class="card-header" data-background-color="purple">
-                <h4 class="title">Create Event</h4>
-                <!--<p class="category">Complete your profile</p>-->
-              </div>
-              <div class="card-content">
-                <form>
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                      <div class="form-group label-floating">
-                        <label class="control-label">Event Name</label>
-                        <input id='event-name' type="text" class="form-control">
-                      </div>
+  <!-- Modal - Create Event -->
+  <div class="modal fade" id="create-event" tabindex="-1" role="dialog" aria-labelledby="myModalLabelOne" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <!--<h4 class="modal-title" id="myModalLabel">Modal title</h4>-->
+        </div>
+        <div class="modal-body">
+          <div class="card">
+            <div class="card-header" data-background-color="purple">
+              <h4 class="title">Create Event</h4>
+              <!--<p class="category">Complete your profile</p>-->
+            </div>
+            <div class="card-content">
+              <form>
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="form-group label-floating">
+                      <label class="control-label">Event Name</label>
+                      <input id='event-name' type="text" class="form-control">
                     </div>
                   </div>
-                  <div class="clearfix"></div>
-                </form>
-              </div>
+                </div>
+                <div class="clearfix"></div>
+              </form>
             </div>
           </div>
-          <!-- ./modal-body -->
+        </div>
+        <!-- ./modal-body -->
 
-          <div class="modal-footer">
-            <button type="button" class="btn" data-dismiss="modal">Close</button>
-            <button id="event-save" type="button" class="btn">Save</button>
-          </div>
+        <div class="modal-footer">
+          <button type="button" class="btn" data-dismiss="modal">Close</button>
+          <button id="event-save" type="button" class="btn">Save</button>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- Modal - Player profile -->
-    <div class="modal fade" id="player-profile" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <!--<h4 class="modal-title" id="myModalLabel">Modal title</h4>-->
-          </div>
-          <div class="modal-body">
-            <div class="card">
-              <div class="card-header" data-background-color="purple">
-                <h4 class="title">Player Name</h4>
-                <p class="category">Please enter player name</p>
-              </div>
-              <div class="card-content">
-                <form>
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                      <div class="form-group label-floating">
-                        <label class="control-label">Player Name (less than 8 characters)</label>
-                        <input id="player-name" type="text" class="form-control">
-                      </div>
+  <!-- Modal - Player profile -->
+  <div class="modal fade" id="player-profile" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <!--<h4 class="modal-title" id="myModalLabel">Modal title</h4>-->
+        </div>
+        <div class="modal-body">
+          <div class="card">
+            <div class="card-header" data-background-color="purple">
+              <h4 class="title">Player Name</h4>
+              <p class="category">Please enter player name</p>
+            </div>
+            <div class="card-content">
+              <form>
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="form-group label-floating">
+                      <label class="control-label">Player Name (less than 8 characters)</label>
+                      <input id="player-name" type="text" class="form-control">
                     </div>
                   </div>
-                  <div class="clearfix"></div>
-                </form>
-              </div>
+                </div>
+                <div class="clearfix"></div>
+              </form>
             </div>
           </div>
-          <!-- ./modal-body -->
+        </div>
+        <!-- ./modal-body -->
 
-          <div class="modal-footer text-center">
-            <button id="player-cancel" type="button" class="btn btn-default" data-dismiss="modal" style="margin: 0 5px 10px 0;">cancel</button>
-            <button id="player-save" type="button" class="btn btn-default" style="margin: 0 0 10px 5px;">Save</button>
-          </div>
+        <div class="modal-footer text-center">
+          <button id="player-cancel" type="button" class="btn btn-default" data-dismiss="modal" style="margin: 0 5px 10px 0;">cancel</button>
+          <button id="player-save" type="button" class="btn btn-default" style="margin: 0 0 10px 5px;">Save</button>
         </div>
       </div>
     </div>
+  </div>
 
 
 
 
-    <!-- JQuery -->
-    <script type="text/javascript" src="third-party/MDB-free/js/jquery-3.1.1.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-      crossorigin="anonymous"></script>
+  <!-- JQuery -->
+  <script type="text/javascript" src="third-party/MDB-free/js/jquery-3.1.1.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
 
-    <!-- Bootstrap tooltips -->
-    <!--<script type="text/javascript" src="vendors/MDB-free/js/tether.min.js"></script>-->
+  <!-- Bootstrap tooltips -->
+  <!--<script type="text/javascript" src="vendors/MDB-free/js/tether.min.js"></script>-->
 
-    <!-- Bootstrap core JavaScript -->
-    <!--<script type="text/javascript" src="vendors/MDB-free/js/bootstrap.min.js"></script>-->
+  <!-- Bootstrap core JavaScript -->
+  <!--<script type="text/javascript" src="vendors/MDB-free/js/bootstrap.min.js"></script>-->
 
-    <!-- MDB core JavaScript -->
-    <!--<script type="text/javascript" src="vendors/MDB-free/js/mdb.min.js"></script>-->
+  <!-- MDB core JavaScript -->
+  <!--<script type="text/javascript" src="vendors/MDB-free/js/mdb.min.js"></script>-->
 
-    <script src="third-party/MDB-free/js/material.min.js" type="text/javascript"></script>
-    <!-- Material Dashboard javascript methods -->
-    <script src="third-party/MDB-free/js/material-dashboard.js"></script>
+  <script src="third-party/MDB-free/js/material.min.js" type="text/javascript"></script>
+  <!-- Material Dashboard javascript methods -->
+  <script src="third-party/MDB-free/js/material-dashboard.js"></script>
 
-    <script type="text/javascript" src="app/scripts/index.js"></script>
-    <!--<script type="text/javascript" src="dist/bundle.js"></script>-->
-    <script type="text/javascript" src="app/scripts/radarChart.js"></script>
-    <!-- <script type="text/javascript" src="app/scripts/circular-radar-chart.js"></script> -->
-    <script type="text/javascript" src="app/scripts/bar-line-charts.js"></script>
-    <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+  <script type="text/javascript" src="app/scripts/index.js"></script>
+  <!--<script type="text/javascript" src="dist/bundle.js"></script>-->
+  <script type="text/javascript" src="app/scripts/radarChart.js"></script>
+  <!-- <script type="text/javascript" src="app/scripts/circular-radar-chart.js"></script> -->
+  <script type="text/javascript" src="app/scripts/bar-line-charts.js"></script>
+  <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
 </body>
 
 </html>

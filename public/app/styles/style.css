@@ -222,7 +222,7 @@ circle {
 }
 
 
-/*.full-bg-img {
+.full-bg-img {
   height: 100%;
   width: 100%;
   position: absolute;
@@ -247,4 +247,4 @@ circle {
   .flex-center ul {
     text-align: center; }
     .flex-center ul li {
-      margin-bottom: 1rem; }*/
+      margin-bottom: 1rem; }

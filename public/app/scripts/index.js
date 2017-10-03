@@ -149,6 +149,7 @@ $('.nav a').click(e => {
   switch (tag) {
     case '#locations':
       $('#all-players').empty();
+      $('#tld').hide();
       break;
     case '#players':
       showPlayers();
